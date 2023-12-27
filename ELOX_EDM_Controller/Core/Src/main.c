@@ -51,12 +51,16 @@
 
 /* Private variables ---------------------------------------------------------*/
 
+
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+//static void MX_GPIO_Init(void);
+//void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -64,6 +68,18 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 extern GT911_Dev Dev_Now;
+
+uint32_t counter = 0;
+
+int16_t count = 0;
+
+int16_t position = 0;
+
+int speed =0;
+
+
+
+
 /* USER CODE END 0 */
 
 /**
@@ -107,6 +123,7 @@ int main(void)
   MX_DMA2D_Init();
   MX_TIM2_Init();
   MX_CRC_Init();
+  MX_TIM3_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
   printf("******** LTDC Example ********\r\n");
@@ -115,6 +132,9 @@ int main(void)
   	TIM2->CCR4 = 500;
   	BSP_LCD_Init();
   	HAL_Delay(50);
+  	printf("******** Encoder Interface Init ********\r\n");
+  	HAL_TIM_Encoder_Start_IT(&htim3,TIM_CHANNEL_ALL);
+
 
   /* USER CODE END 2 */
 
@@ -189,6 +209,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+/**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	// the code is in STM32TouchController.cpp
@@ -198,6 +225,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	}
 
 }
+
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
+	counter = __HAL_TIM_GET_COUNTER(htim);
+
+	count = (int16_t)counter;
+
+	position = count/4;
+	printf("Count = %ld\r\n",counter);
+}
+
 /* USER CODE END 4 */
 
 /**

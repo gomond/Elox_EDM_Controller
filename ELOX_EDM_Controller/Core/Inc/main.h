@@ -66,6 +66,10 @@ void Error_Handler(void);
 #define SCL_GPIO_Port GPIOF
 #define SDA_Pin GPIO_PIN_8
 #define SDA_GPIO_Port GPIOF
+#define ENCODER_A__Pin GPIO_PIN_6
+#define ENCODER_A__GPIO_Port GPIOA
+#define ENCODER_B__Pin GPIO_PIN_7
+#define ENCODER_B__GPIO_Port GPIOA
 #define INT_Pin GPIO_PIN_7
 #define INT_GPIO_Port GPIOD
 #define INT_EXTI_IRQn EXTI9_5_IRQn
