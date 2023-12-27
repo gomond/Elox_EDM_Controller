@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.23.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_A9CW" Alignment="Left" TypographyId="Very_Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_UDLK" Alignment="Left" TypographyId="Very_Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_V8QO" Alignment="Left" TypographyId="Very_Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_9BSU" Alignment="Left" TypographyId="Very_Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_DPFW" Alignment="Left" TypographyId="Very_Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CT41" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Current Live Position</Translation>
+      </Text>
+      <Text Id="__SingleUse_H868" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Finish Depth</Translation>
+      </Text>
+      <Text Id="__SingleUse_QNSD" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Retract Distance</Translation>
+      </Text>
+      <Text Id="__SingleUse_0TQF" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Upper Ram Limit</Translation>
+      </Text>
+      <Text Id="__SingleUse_A98B" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Cut Interval</Translation>
+      </Text>
+      <Text Id="__SingleUse_MNIN" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">MM</Translation>
+      </Text>
+      <Text Id="__SingleUse_54L6" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Auto</Translation>
+      </Text>
+      <Text Id="__SingleUse_UZ4Q" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Inch</Translation>
+      </Text>
+      <Text Id="__SingleUse_5UQK" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Man</Translation>
+      </Text>
+      <Text Id="__SingleUse_HP4A" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">ELOX EDM Controller</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Very_Large" Font="verdana.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>
