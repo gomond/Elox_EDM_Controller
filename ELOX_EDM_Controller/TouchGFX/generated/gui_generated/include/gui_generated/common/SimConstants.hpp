@@ -6,6 +6,6 @@
 
 static unsigned short SIM_WIDTH = 1024;
 static unsigned short SIM_HEIGHT = 600;
-#define SIM_TITLE "LTDC_TouchFX"
+#define SIM_TITLE "ELOX_EDM_Controller"
 
 #endif // SIMCONSTANTS_HPP

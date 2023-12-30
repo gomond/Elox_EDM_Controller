@@ -4,12 +4,31 @@
     <Language Id="GB" />
   </Languages>
   <Texts>
-    <TextGroup Id="Group1" />
-    <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_A9CW" Alignment="Left" TypographyId="Very_Large">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+    <TextGroup Id="Group1">
+      <Text Id="EnteredText" Alignment="Left" TypographyId="Display">
+        <Translation Language="GB">&lt;placeholder&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_UDLK" Alignment="Left" TypographyId="Very_Large">
+      <Text Id="NumMode" Alignment="Center" TypographyId="Mode">
+        <Translation Language="GB">ABC</Translation>
+      </Text>
+      <Text Id="AlphaMode" Alignment="Center" TypographyId="Mode">
+        <Translation Language="GB" Alignment="Center">000.0000</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_FUIN" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">KB&#10;Exit</Translation>
+      </Text>
+      <Text Id="__SingleUse_XB1A" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">OK</Translation>
+      </Text>
+      <Text Id="__SingleUse_ND8M" Alignment="Center" TypographyId="Very_Large">
+        <Translation Language="GB">000.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_F0GC" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">000.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_A9CW" Alignment="Left" TypographyId="Very_Large">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_V8QO" Alignment="Left" TypographyId="Very_Large">
@@ -57,6 +76,9 @@
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Very_Large" Font="verdana.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Very_Large" Font="verdana.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=".0123456789" WildcardCharacterRanges="0-9" />
+    <Typography Id="Display" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="Mode" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Keyboard" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="a-z,A-Z,0-9" />
   </Typographies>
 </TextDatabase>

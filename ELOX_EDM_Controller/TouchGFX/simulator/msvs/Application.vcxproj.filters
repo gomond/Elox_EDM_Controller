@@ -225,6 +225,9 @@
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml">
@@ -675,6 +678,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
       <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardKeyMapping.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp">
+      <Filter>Header Files\gui\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

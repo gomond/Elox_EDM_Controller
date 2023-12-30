@@ -54,7 +54,10 @@
 
 
 /* USER CODE BEGIN PV */
-
+uint32_t counter = 0;
+int16_t count = 0;
+int16_t position = 0;
+int speed =0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,13 +72,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 extern GT911_Dev Dev_Now;
 
-uint32_t counter = 0;
 
-int16_t count = 0;
-
-int16_t position = 0;
-
-int speed =0;
 
 
 
@@ -233,7 +230,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 	count = (int16_t)counter;
 
 	position = count/4;
-	printf("Count = %ld\r\n",counter);
+	printf("Count = %d\r\n",position);
 }
 
 /* USER CODE END 4 */

@@ -7,6 +7,7 @@
           {
             "Type": "Box",
             "Name": "box1",
+            "Y": 12,
             "Width": 600,
             "Height": 1024,
             "Color": {
@@ -17,85 +18,35 @@
           },
           {
             "Type": "BoxWithBorder",
-            "Name": "boxWithBorder1_2",
-            "X": 50,
-            "Y": 123,
-            "Width": 500,
-            "Height": 110,
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "BorderSize": 5
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Name": "boxWithBorder1_3",
-            "X": 50,
-            "Y": 402,
-            "Width": 500,
-            "Height": 110,
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "BorderSize": 5
-          },
-          {
-            "Type": "BoxWithBorder",
             "Name": "boxWithBorder1",
             "X": 50,
             "Y": 683,
             "Width": 500,
             "Height": 110,
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 22,
+              "Green": 82,
+              "Blue": 57
             },
-            "BorderSize": 5
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Name": "boxWithBorder1_4",
-            "X": 50,
-            "Y": 541,
-            "Width": 500,
-            "Height": 110,
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "BorderSize": 5
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Name": "boxWithBorder1_1",
-            "X": 50,
-            "Y": 264,
-            "Width": 500,
-            "Height": 110,
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+            "BorderColor": {
+              "Red": 21,
+              "Green": 39,
+              "Blue": 61
             },
             "BorderSize": 5
           },
           {
             "Type": "TextArea",
-            "Name": "Upper_Ram_limit",
-            "X": 69,
+            "Name": "Upper_Ram_limit_Text",
+            "X": 58,
             "Y": 261,
-            "Width": 75,
+            "Width": 484,
             "Height": 102,
             "TextId": "__SingleUse_9BSU",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
+              "TextId": "AlphaMode",
               "UseBuffer": true,
               "BufferSize": 10
             }
@@ -113,7 +64,7 @@
           },
           {
             "Type": "ToggleButton",
-            "Name": "toggleButton1",
+            "Name": "Toggle_Man_Auto",
             "X": 78,
             "Y": 946,
             "Width": 110,
@@ -124,7 +75,7 @@
           },
           {
             "Type": "ToggleButton",
-            "Name": "toggleButton1_1",
+            "Name": "Toggle_IM",
             "X": 414,
             "Y": 946,
             "Width": 110,
@@ -234,70 +185,407 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Cut_Interval",
-            "X": 69,
-            "Y": 109,
-            "Width": 75,
+            "Name": "Cut_Interval_Text",
+            "X": 52,
+            "Y": 121,
+            "Width": 484,
             "Height": 102,
             "TextId": "__SingleUse_DPFW",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
+              "TextId": "AlphaMode",
               "UseBuffer": true,
               "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
-            "Name": "Finish_Depth",
-            "X": 69,
-            "Y": 541,
-            "Width": 75,
+            "Name": "Finish_Depth_Text",
+            "X": 59,
+            "Y": 536,
+            "Width": 484,
             "Height": 102,
             "TextId": "__SingleUse_V8QO",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
+              "TextId": "AlphaMode",
               "UseBuffer": true,
               "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
-            "Name": "Current_Live_Position",
-            "X": 69,
-            "Y": 683,
-            "Width": 75,
-            "Height": 102,
-            "TextId": "__SingleUse_UDLK",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Retract_Distance",
-            "X": 69,
-            "Y": 406,
-            "Width": 75,
+            "Name": "Retract_Distance_Text",
+            "X": 58,
+            "Y": 398,
+            "Width": 484,
             "Height": 102,
             "TextId": "__SingleUse_A9CW",
             "TextRotation": "0",
+            "Color": {
+              "Red": 5,
+              "Green": 3,
+              "Blue": 3
+            },
             "AutoSize": true,
             "Wildcard1": {
+              "TextId": "__SingleUse_F0GC",
               "UseBuffer": true,
               "BufferSize": 10
             }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "Cut_Interval_Button",
+            "X": 50,
+            "Y": 129,
+            "Width": 500,
+            "Height": 100,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 500,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ],
+            "Clickable": true
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "Upper_Ram_Limit_Button",
+            "X": 52,
+            "Y": 268,
+            "Width": 498,
+            "Height": 100,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 498,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "Retract_Distance_Button",
+            "X": 58,
+            "Y": 406,
+            "Width": 500,
+            "Height": 100,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 500,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "Finish_Depth_Button",
+            "X": 50,
+            "Y": 543,
+            "Width": 500,
+            "Height": 100,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 500,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Current_Live_Position_Text",
+            "X": 58,
+            "Y": 672,
+            "Width": 484,
+            "Height": 102,
+            "TextId": "__SingleUse_ND8M",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "KB_Exit",
+            "X": 8,
+            "Y": 802,
+            "Width": 100,
+            "Height": 100,
+            "Visible": false,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "TextId": "__SingleUse_FUIN",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 100,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 150,
+                  "Green": 169,
+                  "Blue": 178
+                },
+                "ColorPressed": {
+                  "Red": 44,
+                  "Green": 72,
+                  "Blue": 82
+                },
+                "ColorBorderReleased": {
+                  "Red": 132,
+                  "Green": 154,
+                  "Blue": 176
+                },
+                "ColorBorderPressed": {
+                  "Red": 57,
+                  "Green": 78,
+                  "Blue": 99
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "OK",
+            "X": 492,
+            "Y": 802,
+            "Width": 100,
+            "Height": 100,
+            "Visible": false,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 25,
+                "TextId": "__SingleUse_XB1A",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 100,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Red": 176,
+                  "Green": 196,
+                  "Blue": 207
+                },
+                "ColorPressed": {
+                  "Red": 30,
+                  "Green": 42,
+                  "Blue": 46
+                },
+                "ColorBorderReleased": {
+                  "Red": 77,
+                  "Green": 123,
+                  "Blue": 168
+                },
+                "ColorBorderPressed": {
+                  "Red": 19,
+                  "Green": 44,
+                  "Blue": 69
+                }
+              }
+            ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Cut_Interval_Button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Cut_Interval_Change_Value"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Upper_Ram_Limit_Button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Upper_Ram_Limit_Change_Value"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Retract_Distance_Button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Retract_Distance_Change_Value"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Finish_Depth_Button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Finish_Depth_Change_Value"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "OK"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "OK_Pressed"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "KB_Exit"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "KB_Exit_Pressed"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],
-    "Name": "LTDC_TouchFX",
+    "Name": "ELOX_EDM_Controller",
     "Resolution": {
       "Width": 1024,
       "Height": 600
