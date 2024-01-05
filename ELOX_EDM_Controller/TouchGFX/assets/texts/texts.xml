@@ -12,18 +12,33 @@
         <Translation Language="GB">ABC</Translation>
       </Text>
       <Text Id="AlphaMode" Alignment="Center" TypographyId="Mode">
-        <Translation Language="GB" Alignment="Center">000.0000</Translation>
+        <Translation Language="GB" Alignment="Center">123</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_HQ56" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Zero Z</Translation>
+      </Text>
+      <Text Id="__SingleUse_4PKM" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">000.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_4IAU" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">000.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_YD4B" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">000.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_H54P" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">000.0000</Translation>
+      </Text>
       <Text Id="__SingleUse_FUIN" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">KB&#10;Exit</Translation>
       </Text>
       <Text Id="__SingleUse_XB1A" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">OK</Translation>
       </Text>
-      <Text Id="__SingleUse_ND8M" Alignment="Center" TypographyId="Very_Large">
-        <Translation Language="GB">000.0000</Translation>
+      <Text Id="__SingleUse_ND8M" Alignment="Left" TypographyId="Very_Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_F0GC" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">000.0000</Translation>

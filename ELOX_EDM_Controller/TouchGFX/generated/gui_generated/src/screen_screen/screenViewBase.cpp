@@ -7,44 +7,28 @@
 #include <images/BitmapDatabase.hpp>
 
 screenViewBase::screenViewBase() :
-    flexButtonCallback(this, &screenViewBase::flexButtonCallbackHandler)
+    flexButtonCallback(this, &screenViewBase::flexButtonCallbackHandler),
+    buttonCallback(this, &screenViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 600, 1024);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    box1.setPosition(0, 12, 600, 1024);
+    box1.setPosition(0, 0, 600, 1024);
     box1.setColor(touchgfx::Color::getColorFromRGB(101, 100, 107));
     add(box1);
 
-    boxWithBorder1.setPosition(50, 683, 500, 110);
-    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(22, 82, 57));
+    boxWithBorder1.setPosition(58, 691, 484, 90);
+    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(9, 10, 10));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(21, 39, 61));
     boxWithBorder1.setBorderSize(5);
     add(boxWithBorder1);
-
-    Upper_Ram_limit_Text.setXY(58, 261);
-    Upper_Ram_limit_Text.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    Upper_Ram_limit_Text.setLinespacing(0);
-    Unicode::snprintf(Upper_Ram_limit_TextBuffer, UPPER_RAM_LIMIT_TEXT_SIZE, "%s", touchgfx::TypedText(T_ALPHAMODE).getText());
-    Upper_Ram_limit_Text.setWildcard(Upper_Ram_limit_TextBuffer);
-    Upper_Ram_limit_Text.resizeToCurrentText();
-    Upper_Ram_limit_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9BSU));
-    add(Upper_Ram_limit_Text);
 
     textArea1.setXY(90, 9);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HP4A));
     add(textArea1);
-
-    Toggle_Man_Auto.setXY(78, 946);
-    Toggle_Man_Auto.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
-    add(Toggle_Man_Auto);
-
-    Toggle_IM.setXY(414, 946);
-    Toggle_IM.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
-    add(Toggle_IM);
 
     textArea2.setXY(27, 971);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -100,71 +84,6 @@ screenViewBase::screenViewBase() :
     textArea10.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CT41));
     add(textArea10);
 
-    Cut_Interval_Text.setXY(52, 121);
-    Cut_Interval_Text.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    Cut_Interval_Text.setLinespacing(0);
-    Unicode::snprintf(Cut_Interval_TextBuffer, CUT_INTERVAL_TEXT_SIZE, "%s", touchgfx::TypedText(T_ALPHAMODE).getText());
-    Cut_Interval_Text.setWildcard(Cut_Interval_TextBuffer);
-    Cut_Interval_Text.resizeToCurrentText();
-    Cut_Interval_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DPFW));
-    add(Cut_Interval_Text);
-
-    Finish_Depth_Text.setXY(59, 536);
-    Finish_Depth_Text.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    Finish_Depth_Text.setLinespacing(0);
-    Unicode::snprintf(Finish_Depth_TextBuffer, FINISH_DEPTH_TEXT_SIZE, "%s", touchgfx::TypedText(T_ALPHAMODE).getText());
-    Finish_Depth_Text.setWildcard(Finish_Depth_TextBuffer);
-    Finish_Depth_Text.resizeToCurrentText();
-    Finish_Depth_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_V8QO));
-    add(Finish_Depth_Text);
-
-    Retract_Distance_Text.setXY(58, 398);
-    Retract_Distance_Text.setColor(touchgfx::Color::getColorFromRGB(5, 3, 3));
-    Retract_Distance_Text.setLinespacing(0);
-    Unicode::snprintf(Retract_Distance_TextBuffer, RETRACT_DISTANCE_TEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_F0GC).getText());
-    Retract_Distance_Text.setWildcard(Retract_Distance_TextBuffer);
-    Retract_Distance_Text.resizeToCurrentText();
-    Retract_Distance_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_A9CW));
-    add(Retract_Distance_Text);
-
-    Cut_Interval_Button.setBoxWithBorderPosition(0, 0, 500, 100);
-    Cut_Interval_Button.setBorderSize(5);
-    Cut_Interval_Button.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    Cut_Interval_Button.setAlpha(0);
-    Cut_Interval_Button.setAction(flexButtonCallback);
-    Cut_Interval_Button.setPosition(50, 129, 500, 100);
-    add(Cut_Interval_Button);
-
-    Upper_Ram_Limit_Button.setBoxWithBorderPosition(0, 0, 498, 100);
-    Upper_Ram_Limit_Button.setBorderSize(5);
-    Upper_Ram_Limit_Button.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    Upper_Ram_Limit_Button.setAlpha(0);
-    Upper_Ram_Limit_Button.setAction(flexButtonCallback);
-    Upper_Ram_Limit_Button.setPosition(52, 268, 498, 100);
-    add(Upper_Ram_Limit_Button);
-
-    Retract_Distance_Button.setBoxWithBorderPosition(0, 0, 500, 100);
-    Retract_Distance_Button.setBorderSize(5);
-    Retract_Distance_Button.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    Retract_Distance_Button.setAlpha(0);
-    Retract_Distance_Button.setAction(flexButtonCallback);
-    Retract_Distance_Button.setPosition(58, 406, 500, 100);
-    add(Retract_Distance_Button);
-
-    Finish_Depth_Button.setBoxWithBorderPosition(0, 0, 500, 100);
-    Finish_Depth_Button.setBorderSize(5);
-    Finish_Depth_Button.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    Finish_Depth_Button.setAlpha(0);
-    Finish_Depth_Button.setAction(flexButtonCallback);
-    Finish_Depth_Button.setPosition(50, 543, 500, 100);
-    add(Finish_Depth_Button);
-
-    Current_Live_Position_Text.setXY(58, 672);
-    Current_Live_Position_Text.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    Current_Live_Position_Text.setLinespacing(0);
-    Current_Live_Position_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ND8M));
-    add(Current_Live_Position_Text);
-
     KB_Exit.setBoxWithBorderPosition(0, 0, 100, 100);
     KB_Exit.setBorderSize(5);
     KB_Exit.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(150, 169, 178), touchgfx::Color::getColorFromRGB(44, 72, 82), touchgfx::Color::getColorFromRGB(132, 154, 176), touchgfx::Color::getColorFromRGB(57, 78, 99));
@@ -186,6 +105,106 @@ screenViewBase::screenViewBase() :
     OK.setAction(flexButtonCallback);
     OK.setPosition(492, 802, 100, 100);
     add(OK);
+
+    Toggle_IM.setXY(414, 946);
+    Toggle_IM.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
+    add(Toggle_IM);
+
+    Toggle_Man_Auto.setXY(78, 946);
+    Toggle_Man_Auto.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
+    add(Toggle_Man_Auto);
+
+    Current_Live_Position_Text.setXY(58, 671);
+    Current_Live_Position_Text.setColor(touchgfx::Color::getColorFromRGB(204, 24, 24));
+    Current_Live_Position_Text.setLinespacing(0);
+    Unicode::snprintf(Current_Live_Position_TextBuffer, CURRENT_LIVE_POSITION_TEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4PKM).getText());
+    Current_Live_Position_Text.setWildcard(Current_Live_Position_TextBuffer);
+    Current_Live_Position_Text.resizeToCurrentText();
+    Current_Live_Position_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ND8M));
+    add(Current_Live_Position_Text);
+
+    Finish_Depth_Text.setXY(59, 536);
+    Finish_Depth_Text.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Finish_Depth_Text.setLinespacing(0);
+    Unicode::snprintf(Finish_Depth_TextBuffer, FINISH_DEPTH_TEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_H54P).getText());
+    Finish_Depth_Text.setWildcard(Finish_Depth_TextBuffer);
+    Finish_Depth_Text.resizeToCurrentText();
+    Finish_Depth_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_V8QO));
+    add(Finish_Depth_Text);
+
+    Finish_Depth_Button.setBoxWithBorderPosition(0, 0, 500, 100);
+    Finish_Depth_Button.setBorderSize(5);
+    Finish_Depth_Button.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    Finish_Depth_Button.setAlpha(0);
+    Finish_Depth_Button.setAction(flexButtonCallback);
+    Finish_Depth_Button.setPosition(50, 543, 500, 100);
+    add(Finish_Depth_Button);
+
+    Retract_Distance_Text.setXY(58, 398);
+    Retract_Distance_Text.setColor(touchgfx::Color::getColorFromRGB(5, 3, 3));
+    Retract_Distance_Text.setLinespacing(0);
+    Unicode::snprintf(Retract_Distance_TextBuffer, RETRACT_DISTANCE_TEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_F0GC).getText());
+    Retract_Distance_Text.setWildcard(Retract_Distance_TextBuffer);
+    Retract_Distance_Text.resizeToCurrentText();
+    Retract_Distance_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_A9CW));
+    add(Retract_Distance_Text);
+
+    Retract_Distance_Button.setBoxWithBorderPosition(0, 0, 500, 100);
+    Retract_Distance_Button.setBorderSize(5);
+    Retract_Distance_Button.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    Retract_Distance_Button.setAlpha(0);
+    Retract_Distance_Button.setAction(flexButtonCallback);
+    Retract_Distance_Button.setPosition(58, 406, 500, 100);
+    add(Retract_Distance_Button);
+
+    Upper_Ram_limit_Text.setXY(58, 261);
+    Upper_Ram_limit_Text.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Upper_Ram_limit_Text.setLinespacing(0);
+    Unicode::snprintf(Upper_Ram_limit_TextBuffer, UPPER_RAM_LIMIT_TEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YD4B).getText());
+    Upper_Ram_limit_Text.setWildcard(Upper_Ram_limit_TextBuffer);
+    Upper_Ram_limit_Text.resizeToCurrentText();
+    Upper_Ram_limit_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9BSU));
+    add(Upper_Ram_limit_Text);
+
+    Upper_Ram_Limit_Button.setBoxWithBorderPosition(0, 0, 498, 100);
+    Upper_Ram_Limit_Button.setBorderSize(5);
+    Upper_Ram_Limit_Button.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    Upper_Ram_Limit_Button.setAlpha(0);
+    Upper_Ram_Limit_Button.setAction(flexButtonCallback);
+    Upper_Ram_Limit_Button.setPosition(52, 268, 498, 100);
+    add(Upper_Ram_Limit_Button);
+
+    boxWithBorder2.setPosition(53, 139, 483, 90);
+    boxWithBorder2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorder2.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder2.setBorderSize(5);
+    boxWithBorder2.setAlpha(74);
+    add(boxWithBorder2);
+
+    Cut_Interval_Text.setXY(52, 121);
+    Cut_Interval_Text.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Cut_Interval_Text.setLinespacing(0);
+    Unicode::snprintf(Cut_Interval_TextBuffer, CUT_INTERVAL_TEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4IAU).getText());
+    Cut_Interval_Text.setWildcard(Cut_Interval_TextBuffer);
+    Cut_Interval_Text.resizeToCurrentText();
+    Cut_Interval_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DPFW));
+    add(Cut_Interval_Text);
+
+    Cut_Interval_Button.setBoxWithBorderPosition(0, 0, 500, 100);
+    Cut_Interval_Button.setBorderSize(5);
+    Cut_Interval_Button.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    Cut_Interval_Button.setAlpha(0);
+    Cut_Interval_Button.setAction(flexButtonCallback);
+    Cut_Interval_Button.setPosition(50, 129, 500, 100);
+    add(Cut_Interval_Button);
+
+    Zero_Z_Counter.setXY(207, 825);
+    Zero_Z_Counter.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_INACTIVE_ID));
+    Zero_Z_Counter.setLabelText(touchgfx::TypedText(T___SINGLEUSE_HQ56));
+    Zero_Z_Counter.setLabelColor(touchgfx::Color::getColorFromRGB(140, 48, 48));
+    Zero_Z_Counter.setLabelColorPressed(touchgfx::Color::getColorFromRGB(10, 9, 9));
+    Zero_Z_Counter.setAction(buttonCallback);
+    add(Zero_Z_Counter);
 }
 
 screenViewBase::~screenViewBase()
@@ -241,5 +260,16 @@ void screenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCon
         //When KB_Exit clicked call virtual function
         //Call KB_Exit_Pressed
         KB_Exit_Pressed();
+    }
+}
+
+void screenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &Zero_Z_Counter)
+    {
+        //Interaction7
+        //When Zero_Z_Counter clicked call virtual function
+        //Call Zero_Z_Encoder_Value
+        Zero_Z_Encoder_Value();
     }
 }

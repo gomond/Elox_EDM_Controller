@@ -7,9 +7,9 @@
           {
             "Type": "Box",
             "Name": "box1",
-            "Y": 12,
             "Width": 600,
             "Height": 1024,
+            "LockPosition": true,
             "Color": {
               "Red": 101,
               "Green": 100,
@@ -19,14 +19,14 @@
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder1",
-            "X": 50,
-            "Y": 683,
-            "Width": 500,
-            "Height": 110,
+            "X": 58,
+            "Y": 691,
+            "Width": 484,
+            "Height": 90,
             "Color": {
-              "Red": 22,
-              "Green": 82,
-              "Blue": 57
+              "Red": 9,
+              "Green": 10,
+              "Blue": 10
             },
             "BorderColor": {
               "Red": 21,
@@ -34,22 +34,6 @@
               "Blue": 61
             },
             "BorderSize": 5
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Upper_Ram_limit_Text",
-            "X": 58,
-            "Y": 261,
-            "Width": 484,
-            "Height": 102,
-            "TextId": "__SingleUse_9BSU",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "AlphaMode",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
           },
           {
             "Type": "TextArea",
@@ -61,28 +45,6 @@
             "TextId": "__SingleUse_HP4A",
             "TextRotation": "0",
             "AutoSize": true
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "Toggle_Man_Auto",
-            "X": 78,
-            "Y": 946,
-            "Width": 110,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_off_light.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_on_normal.png",
-            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded.json"
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "Toggle_IM",
-            "X": 414,
-            "Y": 946,
-            "Width": 110,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_off_light.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_on_normal.png",
-            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded.json"
           },
           {
             "Type": "TextArea",
@@ -180,223 +142,6 @@
             "Width": 209,
             "Height": 24,
             "TextId": "__SingleUse_CT41",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Cut_Interval_Text",
-            "X": 52,
-            "Y": 121,
-            "Width": 484,
-            "Height": 102,
-            "TextId": "__SingleUse_DPFW",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "AlphaMode",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Finish_Depth_Text",
-            "X": 59,
-            "Y": 536,
-            "Width": 484,
-            "Height": 102,
-            "TextId": "__SingleUse_V8QO",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "AlphaMode",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Retract_Distance_Text",
-            "X": 58,
-            "Y": 398,
-            "Width": 484,
-            "Height": 102,
-            "TextId": "__SingleUse_A9CW",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 5,
-              "Green": 3,
-              "Blue": 3
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_F0GC",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "Cut_Interval_Button",
-            "X": 50,
-            "Y": 129,
-            "Width": 500,
-            "Height": 100,
-            "Alpha": 0,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "BoxWithBorderButtonStyle",
-                "Width": 500,
-                "Height": 100,
-                "LockToFlexButtonSize": true,
-                "BorderSize": 5,
-                "ColorReleased": {
-                  "Green": 102,
-                  "Blue": 153
-                },
-                "ColorPressed": {
-                  "Green": 153,
-                  "Blue": 204
-                },
-                "ColorBorderReleased": {
-                  "Green": 51,
-                  "Blue": 102
-                },
-                "ColorBorderPressed": {
-                  "Red": 51,
-                  "Green": 102,
-                  "Blue": 153
-                }
-              }
-            ],
-            "Clickable": true
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "Upper_Ram_Limit_Button",
-            "X": 52,
-            "Y": 268,
-            "Width": 498,
-            "Height": 100,
-            "Alpha": 0,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "BoxWithBorderButtonStyle",
-                "Width": 498,
-                "Height": 100,
-                "LockToFlexButtonSize": true,
-                "BorderSize": 5,
-                "ColorReleased": {
-                  "Green": 102,
-                  "Blue": 153
-                },
-                "ColorPressed": {
-                  "Green": 153,
-                  "Blue": 204
-                },
-                "ColorBorderReleased": {
-                  "Green": 51,
-                  "Blue": 102
-                },
-                "ColorBorderPressed": {
-                  "Red": 51,
-                  "Green": 102,
-                  "Blue": 153
-                }
-              }
-            ]
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "Retract_Distance_Button",
-            "X": 58,
-            "Y": 406,
-            "Width": 500,
-            "Height": 100,
-            "Alpha": 0,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "BoxWithBorderButtonStyle",
-                "Width": 500,
-                "Height": 100,
-                "LockToFlexButtonSize": true,
-                "BorderSize": 5,
-                "ColorReleased": {
-                  "Green": 102,
-                  "Blue": 153
-                },
-                "ColorPressed": {
-                  "Green": 153,
-                  "Blue": 204
-                },
-                "ColorBorderReleased": {
-                  "Green": 51,
-                  "Blue": 102
-                },
-                "ColorBorderPressed": {
-                  "Red": 51,
-                  "Green": 102,
-                  "Blue": 153
-                }
-              }
-            ]
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "Finish_Depth_Button",
-            "X": 50,
-            "Y": 543,
-            "Width": 500,
-            "Height": 100,
-            "Alpha": 0,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "BoxWithBorderButtonStyle",
-                "Width": 500,
-                "Height": 100,
-                "LockToFlexButtonSize": true,
-                "BorderSize": 5,
-                "ColorReleased": {
-                  "Green": 102,
-                  "Blue": 153
-                },
-                "ColorPressed": {
-                  "Green": 153,
-                  "Blue": 204
-                },
-                "ColorBorderReleased": {
-                  "Green": 51,
-                  "Blue": 102
-                },
-                "ColorBorderPressed": {
-                  "Red": 51,
-                  "Green": 102,
-                  "Blue": 153
-                }
-              }
-            ]
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Current_Live_Position_Text",
-            "X": 58,
-            "Y": 672,
-            "Width": 484,
-            "Height": 102,
-            "TextId": "__SingleUse_ND8M",
             "TextRotation": "0",
             "AutoSize": true
           },
@@ -512,6 +257,309 @@
                 }
               }
             ]
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "Toggle_IM",
+            "X": 414,
+            "Y": 946,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_off_light.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_on_normal.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded.json"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "Toggle_Man_Auto",
+            "X": 78,
+            "Y": 946,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_off_light.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_on_normal.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Current_Live_Position_Text",
+            "X": 58,
+            "Y": 671,
+            "Width": 484,
+            "Height": 102,
+            "TextId": "__SingleUse_ND8M",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 204,
+              "Green": 24,
+              "Blue": 24
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_4PKM",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Finish_Depth_Text",
+            "X": 59,
+            "Y": 536,
+            "Width": 484,
+            "Height": 102,
+            "TextId": "__SingleUse_V8QO",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_H54P",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "Finish_Depth_Button",
+            "X": 50,
+            "Y": 543,
+            "Width": 500,
+            "Height": 100,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 500,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Retract_Distance_Text",
+            "X": 58,
+            "Y": 398,
+            "Width": 484,
+            "Height": 102,
+            "TextId": "__SingleUse_A9CW",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 5,
+              "Green": 3,
+              "Blue": 3
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_F0GC",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "Retract_Distance_Button",
+            "X": 58,
+            "Y": 406,
+            "Width": 500,
+            "Height": 100,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 500,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Upper_Ram_limit_Text",
+            "X": 58,
+            "Y": 261,
+            "Width": 484,
+            "Height": 102,
+            "TextId": "__SingleUse_9BSU",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_YD4B",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "Upper_Ram_Limit_Button",
+            "X": 52,
+            "Y": 268,
+            "Width": 498,
+            "Height": 100,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 498,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder2",
+            "X": 53,
+            "Y": 139,
+            "Width": 483,
+            "Height": 90,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 5,
+            "Alpha": 74
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Cut_Interval_Text",
+            "X": 52,
+            "Y": 121,
+            "Width": 484,
+            "Height": 102,
+            "TextId": "__SingleUse_DPFW",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_4IAU",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "Cut_Interval_Button",
+            "X": 50,
+            "Y": 129,
+            "Width": 500,
+            "Height": 100,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 500,
+                "Height": 100,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ],
+            "Clickable": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "Zero_Z_Counter",
+            "X": 207,
+            "Y": 825,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "TextId": "__SingleUse_HQ56",
+            "ReleasedColor": {
+              "Red": 140,
+              "Green": 48,
+              "Blue": 48
+            },
+            "PressedColor": {
+              "Red": 10,
+              "Green": 9,
+              "Blue": 9
+            },
+            "TextRotation": "0"
           }
         ],
         "Interactions": [
@@ -579,6 +627,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "KB_Exit_Pressed"
+            }
+          },
+          {
+            "InteractionName": "Interaction7",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Zero_Z_Counter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Zero_Z_Encoder_Value"
             }
           }
         ]

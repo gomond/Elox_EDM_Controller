@@ -9,11 +9,12 @@
 #include <gui/screen_screen/screenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class screenViewBase : public touchgfx::View<screenPresenter>
 {
@@ -49,6 +50,10 @@ public:
     {
         // Override and implement this function in screen
     }
+    virtual void Zero_Z_Encoder_Value()
+    {
+        // Override and implement this function in screen
+    }
 
 protected:
     FrontendApplication& application() {
@@ -61,10 +66,7 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box box1;
     touchgfx::BoxWithBorder boxWithBorder1;
-    touchgfx::TextAreaWithOneWildcard Upper_Ram_limit_Text;
     touchgfx::TextArea textArea1;
-    touchgfx::ToggleButton Toggle_Man_Auto;
-    touchgfx::ToggleButton Toggle_IM;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea4;
     touchgfx::TextArea textArea5;
@@ -74,28 +76,35 @@ protected:
     touchgfx::TextArea textArea8;
     touchgfx::TextArea textArea9;
     touchgfx::TextArea textArea10;
-    touchgfx::TextAreaWithOneWildcard Cut_Interval_Text;
-    touchgfx::TextAreaWithOneWildcard Finish_Depth_Text;
-    touchgfx::TextAreaWithOneWildcard Retract_Distance_Text;
-    touchgfx::ClickListener< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  > Cut_Interval_Button;
-    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  Upper_Ram_Limit_Button;
-    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  Retract_Distance_Button;
-    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  Finish_Depth_Button;
-    touchgfx::TextArea Current_Live_Position_Text;
     touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  KB_Exit;
     touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  OK;
+    touchgfx::ToggleButton Toggle_IM;
+    touchgfx::ToggleButton Toggle_Man_Auto;
+    touchgfx::TextAreaWithOneWildcard Current_Live_Position_Text;
+    touchgfx::TextAreaWithOneWildcard Finish_Depth_Text;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  Finish_Depth_Button;
+    touchgfx::TextAreaWithOneWildcard Retract_Distance_Text;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  Retract_Distance_Button;
+    touchgfx::TextAreaWithOneWildcard Upper_Ram_limit_Text;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  Upper_Ram_Limit_Button;
+    touchgfx::BoxWithBorder boxWithBorder2;
+    touchgfx::TextAreaWithOneWildcard Cut_Interval_Text;
+    touchgfx::ClickListener< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  > Cut_Interval_Button;
+    touchgfx::ButtonWithLabel Zero_Z_Counter;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t UPPER_RAM_LIMIT_TEXT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar Upper_Ram_limit_TextBuffer[UPPER_RAM_LIMIT_TEXT_SIZE];
-    static const uint16_t CUT_INTERVAL_TEXT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar Cut_Interval_TextBuffer[CUT_INTERVAL_TEXT_SIZE];
+    static const uint16_t CURRENT_LIVE_POSITION_TEXT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar Current_Live_Position_TextBuffer[CURRENT_LIVE_POSITION_TEXT_SIZE];
     static const uint16_t FINISH_DEPTH_TEXT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Finish_Depth_TextBuffer[FINISH_DEPTH_TEXT_SIZE];
     static const uint16_t RETRACT_DISTANCE_TEXT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Retract_Distance_TextBuffer[RETRACT_DISTANCE_TEXT_SIZE];
+    static const uint16_t UPPER_RAM_LIMIT_TEXT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar Upper_Ram_limit_TextBuffer[UPPER_RAM_LIMIT_TEXT_SIZE];
+    static const uint16_t CUT_INTERVAL_TEXT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar Cut_Interval_TextBuffer[CUT_INTERVAL_TEXT_SIZE];
 
 private:
 
@@ -103,11 +112,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<screenViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+    touchgfx::Callback<screenViewBase, const touchgfx::AbstractButton&> buttonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

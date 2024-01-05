@@ -33,6 +33,8 @@
 #include "BSP_SDRAM.h"
 #include "BSP_RGB_LCD.h"
 #include "GT911.h"
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,19 +53,15 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-
-
 /* USER CODE BEGIN PV */
-uint32_t counter = 0;
-int16_t count = 0;
-int16_t position = 0;
-int speed =0;
+//uint32_t counter = 0;
+//int16_t count = 0;
+//int16_t position = 0;
+//int speed =0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-//static void MX_GPIO_Init(void);
-//void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -71,11 +69,6 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 extern GT911_Dev Dev_Now;
-
-
-
-
-
 
 /* USER CODE END 0 */
 
@@ -223,15 +216,15 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 }
 
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
-{
-	counter = __HAL_TIM_GET_COUNTER(htim);
-
-	count = (int16_t)counter;
-
-	position = count/4;
-	printf("Count = %d\r\n",position);
-}
+//void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+//{
+//	counter = __HAL_TIM_GET_COUNTER(htim);
+//
+//	count = (int16_t)counter;
+//
+//	position = count/4;
+//	printf("Count = %d\r\n",position);
+//}
 
 /* USER CODE END 4 */
 

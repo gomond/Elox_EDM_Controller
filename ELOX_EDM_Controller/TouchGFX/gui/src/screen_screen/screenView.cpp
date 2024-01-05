@@ -1,8 +1,13 @@
 #include <gui/screen_screen/screenView.hpp>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include <touchgfx/Color.hpp>
+#include <touchgfx/Unicode.hpp>
 
+#include "tim.h"
+
+static uint32_t counter = 0;
 
 screenView::screenView()
 {
@@ -20,6 +25,14 @@ void screenView::setupScreen()
 void screenView::tearDownScreen()
 {
     screenViewBase::tearDownScreen();
+}
+
+void screenView::handleTickEvent()
+{
+	counter = __HAL_TIM_GET_COUNTER(&htim3);
+	Unicode::snprintf(Current_Live_Position_TextBuffer,CURRENT_LIVE_POSITION_TEXT_SIZE ,"%d",counter/2);
+	Current_Live_Position_Text.invalidate();
+
 }
 
 void screenView::Cut_Interval_Change_Value()
@@ -71,10 +84,6 @@ void screenView::Finish_Depth_Change_Value()
 	textBox_ID = 4;
 }
 
-void screenView::Update_Z_DRO_Value()
-{
-
-}
 
 void screenView::KB_Exit_Pressed()
 {
@@ -118,5 +127,14 @@ void screenView::OK_Pressed()
 	}
 	keyboard.clearBuffer();
 }
+
+void screenView::Zero_Z_Encoder_Value()
+{
+	HAL_TIM_Encoder_Stop_IT(&htim3, TIM_CHANNEL_ALL);
+	//HAL_TIM_Encoder_Init(&htim3, &sConfig);
+	MX_TIM3_Init();
+	HAL_TIM_Encoder_Start_IT(&htim3,TIM_CHANNEL_ALL);
+}
+
 
 
