@@ -114,12 +114,11 @@ screenViewBase::screenViewBase() :
     Toggle_Man_Auto.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
     add(Toggle_Man_Auto);
 
-    Current_Live_Position_Text.setXY(58, 671);
+    Current_Live_Position_Text.setPosition(58, 672, 484, 105);
     Current_Live_Position_Text.setColor(touchgfx::Color::getColorFromRGB(204, 24, 24));
     Current_Live_Position_Text.setLinespacing(0);
     Unicode::snprintf(Current_Live_Position_TextBuffer, CURRENT_LIVE_POSITION_TEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4PKM).getText());
     Current_Live_Position_Text.setWildcard(Current_Live_Position_TextBuffer);
-    Current_Live_Position_Text.resizeToCurrentText();
     Current_Live_Position_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ND8M));
     add(Current_Live_Position_Text);
 

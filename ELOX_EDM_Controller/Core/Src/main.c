@@ -54,15 +54,15 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-//uint32_t counter = 0;
-//int16_t count = 0;
-//int16_t position = 0;
-//int speed =0;
+
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+//void update_encoder( encoder_instance encoder_instance, TIM_HandleTypeDef *htim);
 
 /* USER CODE END PFP */
 
@@ -113,7 +113,7 @@ int main(void)
   MX_DMA2D_Init();
   MX_TIM2_Init();
   MX_CRC_Init();
-  MX_TIM3_Init();
+  MX_TIM5_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
   printf("******** LTDC Example ********\r\n");
@@ -122,9 +122,9 @@ int main(void)
   	TIM2->CCR4 = 500;
   	BSP_LCD_Init();
   	HAL_Delay(50);
-  	printf("******** Encoder Interface Init ********\r\n");
-  	HAL_TIM_Encoder_Start_IT(&htim3,TIM_CHANNEL_ALL);
-
+  printf("******** Encoder Interface Init ********\r\n");
+  	HAL_TIM_Encoder_Start_IT(&htim5,TIM_CHANNEL_ALL);
+  printf("All Cool\r\n");
 
   /* USER CODE END 2 */
 
@@ -216,15 +216,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 }
 
-//void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
-//{
-//	counter = __HAL_TIM_GET_COUNTER(htim);
-//
-//	count = (int16_t)counter;
-//
-//	position = count/4;
-//	printf("Count = %d\r\n",position);
-//}
+
 
 /* USER CODE END 4 */
 

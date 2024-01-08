@@ -95,7 +95,7 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t CURRENT_LIVE_POSITION_TEXT_SIZE = 10;
+    static const uint16_t CURRENT_LIVE_POSITION_TEXT_SIZE = 9;
     touchgfx::Unicode::UnicodeChar Current_Live_Position_TextBuffer[CURRENT_LIVE_POSITION_TEXT_SIZE];
     static const uint16_t FINISH_DEPTH_TEXT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Finish_Depth_TextBuffer[FINISH_DEPTH_TEXT_SIZE];

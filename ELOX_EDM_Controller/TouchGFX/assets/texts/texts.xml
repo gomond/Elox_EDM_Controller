@@ -5,6 +5,9 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1">
+      <Text Id="Red_Text" Alignment="Left" TypographyId="TypogRed_Text">
+        <Translation Language="GB">NumTxt</Translation>
+      </Text>
       <Text Id="EnteredText" Alignment="Left" TypographyId="Display">
         <Translation Language="GB">&lt;placeholder&gt;</Translation>
       </Text>
@@ -19,8 +22,8 @@
       <Text Id="__SingleUse_HQ56" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">Zero Z</Translation>
       </Text>
-      <Text Id="__SingleUse_4PKM" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">000.0000</Translation>
+      <Text Id="__SingleUse_4PKM" Alignment="Left" TypographyId="TypogRed_Text">
+        <Translation Language="GB"></Translation>
       </Text>
       <Text Id="__SingleUse_4IAU" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">000.0000</Translation>
@@ -37,7 +40,7 @@
       <Text Id="__SingleUse_XB1A" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">OK</Translation>
       </Text>
-      <Text Id="__SingleUse_ND8M" Alignment="Left" TypographyId="Very_Large">
+      <Text Id="__SingleUse_ND8M" Alignment="Left" TypographyId="TypogRed_Text">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_F0GC" Alignment="Left" TypographyId="Large">
@@ -95,5 +98,6 @@
     <Typography Id="Display" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="a-z,A-Z,0-9" />
     <Typography Id="Mode" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Keyboard" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="TypogRed_Text" Font="verdana.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=".+-" WildcardCharacterRanges="0-9" />
   </Typographies>
 </TextDatabase>

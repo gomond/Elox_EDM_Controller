@@ -284,9 +284,9 @@
             "Type": "TextArea",
             "Name": "Current_Live_Position_Text",
             "X": 58,
-            "Y": 671,
+            "Y": 672,
             "Width": 484,
-            "Height": 102,
+            "Height": 105,
             "TextId": "__SingleUse_ND8M",
             "TextRotation": "0",
             "Color": {
@@ -294,11 +294,10 @@
               "Green": 24,
               "Blue": 24
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_4PKM",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 9
             }
           },
           {

@@ -7,7 +7,12 @@
 
 #include "tim.h"
 
-static uint32_t counter = 0;
+//static 	int32_t encoderPosition = 0;			// Raw encoder value from counter
+//double 	floatingPoint_EncoderValue; 	// Temporary float variable
+float  		    calibrationFactor = 200.00;    // correct count values
+int32_t  		counter  = 0;					// Raw encoder value from counter
+double 			position = 0;					// Cast and signed integer value.
+
 
 screenView::screenView()
 {
@@ -29,8 +34,12 @@ void screenView::tearDownScreen()
 
 void screenView::handleTickEvent()
 {
-	counter = __HAL_TIM_GET_COUNTER(&htim3);
-	Unicode::snprintf(Current_Live_Position_TextBuffer,CURRENT_LIVE_POSITION_TEXT_SIZE ,"%d",counter/2);
+
+	counter = __HAL_TIM_GET_COUNTER(&htim5);
+
+	position = counter/calibrationFactor; 	// convert to Pos/Neg by casting, and float and calibrate.
+
+	Unicode::snprintfFloat(Current_Live_Position_TextBuffer,CURRENT_LIVE_POSITION_TEXT_SIZE ,"%.3f",position);
 	Current_Live_Position_Text.invalidate();
 
 }
@@ -130,10 +139,9 @@ void screenView::OK_Pressed()
 
 void screenView::Zero_Z_Encoder_Value()
 {
-	HAL_TIM_Encoder_Stop_IT(&htim3, TIM_CHANNEL_ALL);
-	//HAL_TIM_Encoder_Init(&htim3, &sConfig);
-	MX_TIM3_Init();
-	HAL_TIM_Encoder_Start_IT(&htim3,TIM_CHANNEL_ALL);
+	HAL_TIM_Encoder_Stop_IT(&htim5, TIM_CHANNEL_ALL);
+	__HAL_TIM_SET_COUNTER(&htim5,0);						// Zero Z axis DRO
+	HAL_TIM_Encoder_Start_IT(&htim5,TIM_CHANNEL_ALL);
 }
 
 

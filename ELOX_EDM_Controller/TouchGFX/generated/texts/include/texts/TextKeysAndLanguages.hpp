@@ -12,6 +12,7 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T_RED_TEXT,
     T_ENTEREDTEXT,
     T_NUMMODE,
     T_ALPHAMODE,
