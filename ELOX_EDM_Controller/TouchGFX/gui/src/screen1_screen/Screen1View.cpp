@@ -29,7 +29,22 @@ void Screen1View::tearDownScreen()
 //
 //}
 
-//void Screen1View::
-//{
-//	HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_4 );
-//}
+void Screen1View::toggleRelay1()
+{
+	HAL_GPIO_TogglePin(Relay1_GPIO_Port,Relay1_Pin );
+}
+
+void Screen1View::toggleRelay2()
+{
+	HAL_GPIO_TogglePin(Relay2_GPIO_Port,Relay2_Pin );
+}
+
+void Screen1View::toggleRelay3()
+{
+	HAL_GPIO_TogglePin(Relay3_GPIO_Port,Relay3_Pin );
+}
+
+void Screen1View::toggleRelay4()
+{
+	HAL_GPIO_TogglePin(Relay4_GPIO_Port,Relay4_Pin );
+}

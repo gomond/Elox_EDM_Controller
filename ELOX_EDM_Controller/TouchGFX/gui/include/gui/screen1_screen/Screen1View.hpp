@@ -11,7 +11,13 @@ public:
     virtual ~Screen1View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void toggleRelay1();
+    virtual void toggleRelay2();
+    virtual void toggleRelay3();
+    virtual void toggleRelay4();
 protected:
+
 };
 
 #endif // SCREEN1VIEW_HPP
