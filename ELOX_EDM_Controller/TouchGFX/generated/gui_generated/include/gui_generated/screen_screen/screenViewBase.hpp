@@ -91,6 +91,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard Cut_Interval_Text;
     touchgfx::ClickListener< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  > Cut_Interval_Button;
     touchgfx::ButtonWithLabel Zero_Z_Counter;
+    touchgfx::ButtonWithLabel SwitchRelayScreen;
 
     /*
      * Wildcard Buffers

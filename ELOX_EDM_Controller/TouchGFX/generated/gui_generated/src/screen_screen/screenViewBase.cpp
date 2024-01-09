@@ -30,25 +30,25 @@ screenViewBase::screenViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HP4A));
     add(textArea1);
 
-    textArea2.setXY(27, 971);
+    textArea2.setXY(47, 921);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5UQK));
     add(textArea2);
 
-    textArea4.setXY(363, 971);
+    textArea4.setXY(348, 921);
     textArea4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea4.setLinespacing(0);
     textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UZ4Q));
     add(textArea4);
 
-    textArea5.setXY(531, 971);
+    textArea5.setXY(516, 921);
     textArea5.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea5.setLinespacing(0);
     textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MNIN));
     add(textArea5);
 
-    textArea3.setXY(195, 971);
+    textArea3.setXY(215, 921);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea3.setLinespacing(0);
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_54L6));
@@ -106,11 +106,11 @@ screenViewBase::screenViewBase() :
     OK.setPosition(492, 802, 100, 100);
     add(OK);
 
-    Toggle_IM.setXY(414, 946);
+    Toggle_IM.setXY(399, 896);
     Toggle_IM.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
     add(Toggle_IM);
 
-    Toggle_Man_Auto.setXY(78, 946);
+    Toggle_Man_Auto.setXY(98, 896);
     Toggle_Man_Auto.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
     add(Toggle_Man_Auto);
 
@@ -204,6 +204,14 @@ screenViewBase::screenViewBase() :
     Zero_Z_Counter.setLabelColorPressed(touchgfx::Color::getColorFromRGB(10, 9, 9));
     Zero_Z_Counter.setAction(buttonCallback);
     add(Zero_Z_Counter);
+
+    SwitchRelayScreen.setXY(448, 958);
+    SwitchRelayScreen.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUND_PRESSED_ID));
+    SwitchRelayScreen.setLabelText(touchgfx::TypedText(T___SINGLEUSE_QPO9));
+    SwitchRelayScreen.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    SwitchRelayScreen.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    SwitchRelayScreen.setAction(buttonCallback);
+    add(SwitchRelayScreen);
 }
 
 screenViewBase::~screenViewBase()
@@ -270,5 +278,12 @@ void screenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When Zero_Z_Counter clicked call virtual function
         //Call Zero_Z_Encoder_Value
         Zero_Z_Encoder_Value();
+    }
+    if (&src == &SwitchRelayScreen)
+    {
+        //Interaction8
+        //When SwitchRelayScreen clicked change screen to Screen1
+        //Go to Screen1 with screen transition towards East
+        application().gotoScreen1ScreenSlideTransitionEast();
     }
 }

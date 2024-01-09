@@ -19,6 +19,24 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_QPO9" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Relays</Translation>
+      </Text>
+      <Text Id="__SingleUse_JWOB" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Back</Translation>
+      </Text>
+      <Text Id="__SingleUse_6M01" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Relay3</Translation>
+      </Text>
+      <Text Id="__SingleUse_6I23" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Relay4</Translation>
+      </Text>
+      <Text Id="__SingleUse_SLIR" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Relay2</Translation>
+      </Text>
+      <Text Id="__SingleUse_7DLC" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Relay1</Translation>
+      </Text>
       <Text Id="__SingleUse_HQ56" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">Zero Z</Translation>
       </Text>

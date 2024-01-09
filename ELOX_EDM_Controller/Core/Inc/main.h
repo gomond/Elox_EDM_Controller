@@ -67,6 +67,14 @@ void Error_Handler(void);
 #define SCL_GPIO_Port GPIOF
 #define SDA_Pin GPIO_PIN_8
 #define SDA_GPIO_Port GPIOF
+#define Relay1_Pin GPIO_PIN_4
+#define Relay1_GPIO_Port GPIOA
+#define Relay2_Pin GPIO_PIN_5
+#define Relay2_GPIO_Port GPIOA
+#define Relay3_Pin GPIO_PIN_6
+#define Relay3_GPIO_Port GPIOA
+#define Relay4_Pin GPIO_PIN_7
+#define Relay4_GPIO_Port GPIOA
 #define INT_Pin GPIO_PIN_7
 #define INT_GPIO_Port GPIOD
 #define INT_EXTI_IRQn EXTI9_5_IRQn
