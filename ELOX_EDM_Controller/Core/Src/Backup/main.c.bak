@@ -68,7 +68,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-extern GT911_Dev Dev_Now;
+extern volatile GT911_Dev Dev_Now;
 
 /* USER CODE END 0 */
 
@@ -78,10 +78,12 @@ extern GT911_Dev Dev_Now;
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-/* Enable the CPU Cache */
+
+  /* Enable the CPU Cache */
 
   /* Enable I-Cache---------------------------------------------------------*/
   SCB_EnableICache();
@@ -231,8 +233,7 @@ void Error_Handler(void)
 	printf("Error_Handler\r\n");
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

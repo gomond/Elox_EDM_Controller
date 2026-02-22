@@ -1,0 +1,2 @@
+../Core/Src/BSP_SDRAM.c:39:6:BSP_SDRAM_Init	1
+../Core/Src/BSP_SDRAM.c:50:6:BSP_SDRAM_Initialization_sequence	1

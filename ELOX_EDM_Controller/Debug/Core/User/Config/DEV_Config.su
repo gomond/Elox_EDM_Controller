@@ -1,0 +1,2 @@
+../Core/User/Config/DEV_Config.c:34:6:DEV_Set_GPIOMode	40	static
+../Core/User/Config/DEV_Config.c:54:6:DEV_Delay_us	24	static

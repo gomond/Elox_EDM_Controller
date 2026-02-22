@@ -33,7 +33,7 @@
 
 UWORD x[CT_MAX_TOUCH] = {0}, y[CT_MAX_TOUCH] = {0}, z=0;
 UWORD temp=0;
-GT911_Dev Dev_Now,Dev_Backup;
+volatile GT911_Dev Dev_Now, Dev_Backup;
 
 /******************************************************************************
 function:	GT911 reset
@@ -158,7 +158,7 @@ void GT911_touchGFX(int32_t *x_0, int32_t  *y_0, int8_t *touchOnOff)
 {
 	uint8_t buf[41];
     uint8_t Clearbuf = 0;
-	uint8_t i;
+	//uint8_t i;
 
 	//Determine if the interruption is generated
 	if (Dev_Now.Touch == 1)

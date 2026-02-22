@@ -1,0 +1,19 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:30:6:virtual void screenView::tearDownScreen()	0	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:97:6:virtual void screenView::KB_Exit_Pressed()	16	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:108:6:virtual void screenView::OK_Pressed()	16	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:140:6:virtual void screenView::Zero_Z_Encoder_Value()	8	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
+../TouchGFX/gui/include/gui/screen_screen/screenView.hpp:13:13:screenView::~screenView()	8	static
+../TouchGFX/gui/include/gui/screen_screen/screenView.hpp:13:13:virtual screenView::~screenView()	8	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:35:6:virtual void screenView::handleTickEvent()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	24	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:47:6:virtual void screenView::Cut_Interval_Change_Value()	24	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:60:6:virtual void screenView::Upper_Ram_Limit_Change_Value()	24	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:72:6:virtual void screenView::Retract_Distance_Change_Value()	24	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:84:6:virtual void screenView::Finish_Depth_Change_Value()	24	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:17:1:screenView::screenView()	24	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:145:1:cpp)	0	static
+../TouchGFX/gui/src/screen_screen/screenView.cpp:25:6:virtual void screenView::setupScreen()	0	static

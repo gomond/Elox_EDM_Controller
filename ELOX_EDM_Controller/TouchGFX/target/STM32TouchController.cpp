@@ -25,7 +25,7 @@
 #include <STM32TouchController.hpp>
 
 extern "C" {
-#include "GT911.h"
+#include "../../Core/User/GT911/GT911.h"
 }
 
 
@@ -60,10 +60,11 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 		y = y_0;
 		return true;
 		}
-	if(OnOff == 0){
-		return false;
-	}
+	//if(OnOff == 0){
+	return false;
 }
+
+
 
 /* USER CODE END STM32TouchController */
 

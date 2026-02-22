@@ -1,0 +1,7 @@
+../Core/User/GT911/Analog_I2C.c:43:6:I2C_Start	1
+../Core/User/GT911/Analog_I2C.c:63:6:I2C_Stop	1
+../Core/User/GT911/Analog_I2C.c:82:6:I2C_Send_Byte	3
+../Core/User/GT911/Analog_I2C.c:117:7:I2C_Read_Byte	4
+../Core/User/GT911/Analog_I2C.c:148:7:I2C_Wait_Ack	3
+../Core/User/GT911/Analog_I2C.c:172:6:I2C_Ack	1
+../Core/User/GT911/Analog_I2C.c:190:6:I2C_NAck	1

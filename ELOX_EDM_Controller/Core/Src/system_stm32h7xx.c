@@ -137,6 +137,12 @@
   * @param  None
   * @retval None
   */
+
+__weak void ExitRun0Mode(void)
+{
+  /* Default implementation keeps the device in standard run mode. */
+}
+
 void SystemInit (void)
 {
 #if defined (DATA_IN_D2_SRAM)

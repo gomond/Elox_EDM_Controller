@@ -1,0 +1,14 @@
+../Core/Src/BSP_RGB_LCD.c:107:9:BSP_LCD_Init	8	static
+../Core/Src/BSP_RGB_LCD.c:124:10:BSP_LCD_GetXSize	4	static
+../Core/Src/BSP_RGB_LCD.c:133:10:BSP_LCD_GetYSize	4	static
+../Core/Src/BSP_RGB_LCD.c:144:6:BSP_LCD_SelectLayer	16	static
+../Core/Src/BSP_RGB_LCD.c:158:6:BSP_LCD_SetLayerVisible	16	static
+../Core/Src/BSP_RGB_LCD.c:178:6:BSP_LCD_SetTransparency	16	static
+../Core/Src/BSP_RGB_LCD.c:189:6:BSP_LCD_SetLayerAddress	16	static
+../Core/Src/BSP_RGB_LCD.c:203:6:BSP_LCD_SetLayerWindow	24	static
+../Core/Src/BSP_RGB_LCD.c:218:6:BSP_LCD_SetColorKeying	16	static
+../Core/Src/BSP_RGB_LCD.c:230:6:BSP_LCD_ResetColorKeying	16	static
+../Core/Src/BSP_RGB_LCD.c:242:10:BSP_LCD_ReadPixel	32	static
+../Core/Src/BSP_RGB_LCD.c:277:6:BSP_LCD_Clear	40	static
+../Core/Src/BSP_RGB_LCD.c:291:6:BSP_LCD_DrawPixel	24	static
+../Core/Src/BSP_RGB_LCD.c:314:13:LL_FillBuffer	32	static

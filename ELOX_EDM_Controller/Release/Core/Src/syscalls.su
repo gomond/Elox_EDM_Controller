@@ -1,0 +1,18 @@
+../Core/Src/syscalls.c:51:5:_write	8	static
+../Core/Src/syscalls.c:69:6:initialise_monitor_handles	0	static
+../Core/Src/syscalls.c:73:5:_getpid	0	static
+../Core/Src/syscalls.c:78:5:_kill	8	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/unistd.h:18:6:_exit	8	static
+../Core/Src/syscalls.c:90:27:_read	16	static
+../Core/Src/syscalls.c:113:5:_close	0	static
+../Core/Src/syscalls.c:119:5:_fstat	0	static
+../Core/Src/syscalls.c:125:5:_isatty	0	static
+../Core/Src/syscalls.c:130:5:_lseek	0	static
+../Core/Src/syscalls.c:135:5:_open	0	static
+../Core/Src/syscalls.c:141:5:_wait	8	static
+../Core/Src/syscalls.c:147:5:_unlink	8	static
+../Core/Src/syscalls.c:153:5:_times	0	static
+../Core/Src/syscalls.c:158:5:_stat	0	static
+../Core/Src/syscalls.c:164:5:_link	8	static
+../Core/Src/syscalls.c:170:5:_fork	8	static
+../Core/Src/syscalls.c:176:5:_execve	8	static

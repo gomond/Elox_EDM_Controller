@@ -1,0 +1,4 @@
+../Core/User/GT911/GT911.c:97:13:GT911_RD_Reg	2
+../Core/User/GT911/GT911.c:69:16:GT911_WR_Reg.constprop.isra	1
+../Core/User/GT911/GT911.c:149:6:GT911_Init	1
+../Core/User/GT911/GT911.c:157:6:GT911_touchGFX	6

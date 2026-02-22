@@ -1,0 +1,2 @@
+../Core/User/Config/DEV_Config.c:34:6:DEV_Set_GPIOMode	3
+../Core/User/Config/DEV_Config.c:54:6:DEV_Delay_us	2

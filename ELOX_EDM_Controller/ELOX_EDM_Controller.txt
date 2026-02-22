@@ -1,6 +1,6 @@
 Configuration	ELOX_EDM_Controller
-STM32CubeMX 	6.10.0
-Date	12/27/2023
+STM32CubeMX 	6.16.0
+Date	12/22/2025
 MCU	STM32H743IITx
 
 
@@ -81,6 +81,8 @@ RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PH0-OSC_IN (PH0)
 RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PH1-OSC_OUT (PH1)
 SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
 TIM2	PWM Generation CH4	TIM2_CH4	PA3
+TIM5	Encoder Mode	TIM5_CH1	PA0
+TIM5	Encoder Mode	TIM5_CH2	PA1
 USART1	Asynchronous	USART1_RX	PA10
 USART1	Asynchronous	USART1_TX	PA9
 
@@ -106,10 +108,16 @@ Pin Nb	PINs	FUNCTIONs	LABELs
 29	PH0-OSC_IN (PH0)	RCC_OSC_IN	
 30	PH1-OSC_OUT (PH1)	RCC_OSC_OUT	
 32	PC0	LTDC_R5	
+40	PA0	TIM5_CH1	
+41	PA1	TIM5_CH2	
 43	PH2	LTDC_R0	
 44	PH3	LTDC_R1	
 46	PH5	FMC_SDNWE	
 47	PA3	TIM2_CH4	
+50	PA4	GPIO_Output	Relay1
+51	PA5	GPIO_Output	Relay2
+52	PA6	GPIO_Output	Relay3
+53	PA7	GPIO_Output	Relay4
 57	PB1	LTDC_R6	
 59	PF11	FMC_SDNRAS	
 60	PF12	FMC_A6	
@@ -244,6 +252,8 @@ RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PH0-OSC_IN (PH0)
 RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PH1-OSC_OUT (PH1)
 SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
 TIM2	PWM Generation CH4	TIM2_CH4	PA3
+TIM5	Encoder Mode	TIM5_CH1	PA0
+TIM5	Encoder Mode	TIM5_CH2	PA1
 USART1	Asynchronous	USART1_RX	PA10
 USART1	Asynchronous	USART1_TX	PA9
 
@@ -269,10 +279,16 @@ Pin Nb	PINs	FUNCTIONs	LABELs
 29	PH0-OSC_IN (PH0)	RCC_OSC_IN	
 30	PH1-OSC_OUT (PH1)	RCC_OSC_OUT	
 32	PC0	LTDC_R5	
+40	PA0	TIM5_CH1	
+41	PA1	TIM5_CH2	
 43	PH2	LTDC_R0	
 44	PH3	LTDC_R1	
 46	PH5	FMC_SDNWE	
 47	PA3	TIM2_CH4	
+50	PA4	GPIO_Output	Relay1
+51	PA5	GPIO_Output	Relay2
+52	PA6	GPIO_Output	Relay3
+53	PA7	GPIO_Output	Relay4
 57	PB1	LTDC_R6	
 59	PF11	FMC_SDNRAS	
 60	PF12	FMC_A6	
@@ -338,15 +354,15 @@ SOFTWARE PROJECT
 
 Project Settings : 
 Project Name : ELOX_EDM_Controller
-Project Folder : C:\Users\Greg\STM32CubeIDE\workspace_1.14.0\ELOX_EDM_Controller
+Project Folder : C:\Users\gomond\OneDrive\Documents\GitHub\ELOX_EDM_Controller
 Toolchain / IDE : STM32CubeIDE
-Firmware Package Name and Version : STM32Cube FW_H7 V1.11.1
+Firmware Package Name and Version : STM32Cube FW_H7 V1.12.1
 
 
 Code Generation Settings : 
 STM32Cube MCU packages and embedded software packs : Copy only the necessary library files
 Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
-Backup previously generated files when re-generating : No
+Backup previously generated files when re-generating : Yes
 Delete previously generated files when not re-generated : Yes
 Set all free pins as analog (to optimize the power consumption) : No
 

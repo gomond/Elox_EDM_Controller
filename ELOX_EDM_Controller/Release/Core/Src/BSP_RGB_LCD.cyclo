@@ -1,0 +1,13 @@
+../Core/Src/BSP_RGB_LCD.c:124:10:BSP_LCD_GetXSize	1
+../Core/Src/BSP_RGB_LCD.c:133:10:BSP_LCD_GetYSize	1
+../Core/Src/BSP_RGB_LCD.c:144:6:BSP_LCD_SelectLayer	1
+../Core/Src/BSP_RGB_LCD.c:158:6:BSP_LCD_SetLayerVisible	2
+../Core/Src/BSP_RGB_LCD.c:107:9:BSP_LCD_Init	1
+../Core/Src/BSP_RGB_LCD.c:178:6:BSP_LCD_SetTransparency	1
+../Core/Src/BSP_RGB_LCD.c:189:6:BSP_LCD_SetLayerAddress	1
+../Core/Src/BSP_RGB_LCD.c:203:6:BSP_LCD_SetLayerWindow	1
+../Core/Src/BSP_RGB_LCD.c:218:6:BSP_LCD_SetColorKeying	1
+../Core/Src/BSP_RGB_LCD.c:230:6:BSP_LCD_ResetColorKeying	1
+../Core/Src/BSP_RGB_LCD.c:242:10:BSP_LCD_ReadPixel	4
+../Core/Src/BSP_RGB_LCD.c:277:6:BSP_LCD_Clear	5
+../Core/Src/BSP_RGB_LCD.c:291:6:BSP_LCD_DrawPixel	2

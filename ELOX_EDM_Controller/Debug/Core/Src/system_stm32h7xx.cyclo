@@ -1,0 +1,3 @@
+../Core/Src/system_stm32h7xx.c:141:13:ExitRun0Mode	1
+../Core/Src/system_stm32h7xx.c:146:6:SystemInit	4
+../Core/Src/system_stm32h7xx.c:317:6:SystemCoreClockUpdate	10

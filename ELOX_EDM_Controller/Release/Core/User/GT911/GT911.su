@@ -1,0 +1,4 @@
+../Core/User/GT911/GT911.c:97:13:GT911_RD_Reg	24	static
+../Core/User/GT911/GT911.c:69:16:GT911_WR_Reg.constprop.isra	8	static
+../Core/User/GT911/GT911.c:149:6:GT911_Init	40	static
+../Core/User/GT911/GT911.c:157:6:GT911_touchGFX	80	static

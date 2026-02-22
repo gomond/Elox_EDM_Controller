@@ -3,7 +3,6 @@
 	<name>ELOX_EDM_Controller</name>
 	<comment></comment>
 	<projects>
-		<project>ELOX_EDM_Controller</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

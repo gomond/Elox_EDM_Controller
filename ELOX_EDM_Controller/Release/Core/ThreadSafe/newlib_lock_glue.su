@@ -1,0 +1,17 @@
+../Core/ThreadSafe/newlib_lock_glue.c:46:13:Error_Handler	0	static
+../Core/ThreadSafe/stm32_lock.h:160:20:stm32_lock_acquire.part.0	8	static
+../Core/ThreadSafe/stm32_lock.h:160:20:stm32_lock_acquire	8	static
+../Core/ThreadSafe/stm32_lock.h:182:20:stm32_lock_release	8	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:43:13:__retarget_lock_init_recursive	8	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:41:13:__retarget_lock_init	0	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:45:13:__retarget_lock_close	0	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:47:13:__retarget_lock_close_recursive	0	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:49:13:__retarget_lock_acquire	8	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:51:13:__retarget_lock_acquire_recursive	0	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:53:12:__retarget_lock_try_acquire	8	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:55:12:__retarget_lock_try_acquire_recursive	8	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:58:13:__retarget_lock_release	8	static
+C:/Program Files/arm-gnu-toolchain-14.3.rel1-mingw-w64-i686-arm-none-eabi/arm-none-eabi/include/sys/lock.h:60:13:__retarget_lock_release_recursive	0	static
+../Core/ThreadSafe/newlib_lock_glue.c:363:5:__cxa_guard_acquire	8	static
+../Core/ThreadSafe/newlib_lock_glue.c:399:6:__cxa_guard_abort	8	static
+../Core/ThreadSafe/newlib_lock_glue.c:420:6:__cxa_guard_release	8	static

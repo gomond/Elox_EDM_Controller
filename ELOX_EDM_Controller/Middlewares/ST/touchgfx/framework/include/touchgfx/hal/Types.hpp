@@ -1,8 +1,8 @@
 /******************************************************************************
-* Copyright (c) 2018(-2023) STMicroelectronics.
+* Copyright (c) 2018(-2025) STMicroelectronics.
 * All rights reserved.
 *
-* This file is part of the TouchGFX 4.23.0 distribution.
+* This file is part of the TouchGFX 4.26.0 distribution.
 *
 * This software is licensed under terms that can be found in the LICENSE file in
 * the root directory of this software component.
@@ -604,21 +604,6 @@ typedef uint8_t TextDirection;
 static const TextDirection TEXT_DIRECTION_LTR = 0; ///< Text is written Left-To-Right, e.g. English
 static const TextDirection TEXT_DIRECTION_RTL = 1; ///< Text is written Right-To-Left, e.g. Hebrew
 
-/** Values that represent frame buffers. */
-enum FrameBuffer
-{
-    FB_PRIMARY,   ///< First framebuffer
-    FB_SECONDARY, ///< Second framebuffer
-    FB_TERTIARY   ///< Third framebuffer
-};
-
-/** Values that represent gradients. */
-enum Gradient
-{
-    GRADIENT_HORIZONTAL, ///< Horizontal gradient.
-    GRADIENT_VERTICAL    ///< Vertical gradient
-};
-
 /** Values that represent display rotations. */
 enum DisplayRotation
 {
@@ -788,6 +773,59 @@ struct LZW9DictionaryEntry
     uint16_t prefixIndex; ///< Index to previous character
 };
 
+/**
+ * Union used in QOI decompression
+ * Note! We use little endian and BGRA order
+ */
+union PixelARGB8888
+{
+    uint32_t color; ///< The pixel color
+
+    struct
+    {
+        uint8_t b, g, r, a;
+    } bgra; ///< Each color channel in the pixel
+};
+
+/**
+ * Union used in QOI decompression
+ * Note! We use little endian and BGR order
+ */
+union PixelRGB565
+{
+    uint16_t color; ///< The pixel color
+
+    struct
+    {
+        uint16_t b : 5;
+        uint16_t g : 6;
+        uint16_t r : 5;
+    } bgr; ///< Each color channel in the pixel
+};
+
+namespace DMA2DV3
+{
+
+/**
+ * Struct defining layout of DMA2DV3 Command List Descriptors.
+ */
+struct CommandListDescriptor
+{
+    void* linearBufferAddress;  ///< Address of the linear buffer
+    uint16_t linearBufferSize;  ///< Size of the linear buffer
+    uint16_t linearBufferFlags; ///< Flags used for the linear buffer
+};
+
+/**
+ * Struct defining a fixed length linear buffer for DMA2DV3 Command
+ * Lists.
+ */
+struct CommandLinearBuffer
+{
+    uint32_t data[16]; ///< Room for 16 words of instructions and data.
+};
+
+} //namespace DMA2DV3
 } // namespace touchgfx
 
 #endif // TOUCHGFX_TYPES_HPP

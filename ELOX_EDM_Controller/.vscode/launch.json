@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug (OpenOCD)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/ELOX_EDM_Controller.elf",
+      "servertype": "openocd",
+      "device": "STM32H743xx",
+      "configFiles": [
+        "${env:OPENOCD_SCRIPTS}/interface/stlink.cfg",
+        "${env:OPENOCD_SCRIPTS}/target/stm32h7x.cfg"
+      ],
+      "runToMain": true,
+      "preLaunchTask": "Build"
+    }
+  ]
+}

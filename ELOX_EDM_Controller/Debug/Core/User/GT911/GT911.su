@@ -1,0 +1,7 @@
+../Core/User/GT911/GT911.c:41:13:GT911_Reset	32	static
+../Core/User/GT911/GT911.c:69:16:GT911_WR_Reg	24	static
+../Core/User/GT911/GT911.c:97:13:GT911_RD_Reg	32	static
+../Core/User/GT911/GT911.c:122:16:GT911_Read_ID	24	static
+../Core/User/GT911/GT911.c:134:17:GT911_Read_FirmwareVersion	16	static
+../Core/User/GT911/GT911.c:149:6:GT911_Init	8	static
+../Core/User/GT911/GT911.c:157:6:GT911_touchGFX	72	static

@@ -1,8 +1,8 @@
 /******************************************************************************
-* Copyright (c) 2018(-2023) STMicroelectronics.
+* Copyright (c) 2018(-2025) STMicroelectronics.
 * All rights reserved.
 *
-* This file is part of the TouchGFX 4.23.0 distribution.
+* This file is part of the TouchGFX 4.26.0 distribution.
 *
 * This software is licensed under terms that can be found in the LICENSE file in
 * the root directory of this software component.
@@ -36,6 +36,7 @@ typedef uint16_t BitmapId;
 
 const BitmapId BITMAP_ANIMATION_STORAGE = 0xFFFEU; ///< A virtual id representing animation storage.
 const BitmapId BITMAP_INVALID = 0xFFFFU;           ///< Define the bitmapId of an invalid bitmap
+static const uint16_t BLOCK_SIZE = 1024U;          ///< Block size used for RGB decompression
 
 /**
  * This class provides a proxy object for a bitmap image stored in the application specific
@@ -55,20 +56,23 @@ public:
     /** Data of a bitmap can be stored in the following formats. */
     enum BitmapFormat
     {
-        RGB565,   ///< 16-bit, 5 bits for red, 6 bits for green, 5 bits for blue. No alpha channel
-        RGB888,   ///< 24-bit, 8 bits for each of red, green and blue. No alpha channel
-        ARGB8888, ///< 32-bit, 8 bits for each of red, green, blue and alpha channel
-        BW,       ///< 1-bit, black / white. No alpha channel
-        BW_RLE,   ///< 1-bit, black / white. No alpha channel. Image is compressed with horizontal RLE
-        GRAY2,    ///< 2-bit grayscale
-        GRAY4,    ///< 4-bit grayscale
-        ARGB2222, ///< 8-bit color
-        ABGR2222, ///< 8-bit color
-        RGBA2222, ///< 8-bit color
-        BGRA2222, ///< 8-bit color
-        L8,       ///< 8-bit indexed color
-        A4,       ///< 4-bit alpha level
-        CUSTOM    ///< Non-standard platform specific format
+        RGB565,             ///< 16-bit, 5 bits for red, 6 bits for green, 5 bits for blue. No alpha channel
+        RGB888,             ///< 24-bit, 8 bits for each of red, green and blue. No alpha channel
+        ARGB8888,           ///< 32-bit, 8 bits for each of red, green, blue and alpha channel
+        BW,                 ///< 1-bit, black / white. No alpha channel
+        BW_RLE,             ///< 1-bit, black / white. No alpha channel. Image is compressed with horizontal RLE
+        GRAY2,              ///< 2-bit grayscale
+        GRAY4,              ///< 4-bit grayscale
+        ARGB2222,           ///< 8-bit color
+        ABGR2222,           ///< 8-bit color
+        RGBA2222,           ///< 8-bit color
+        BGRA2222,           ///< 8-bit color
+        L8,                 ///< 8-bit indexed color
+        A4,                 ///< 4-bit alpha level
+        CUSTOM,             ///< Non-standard platform specific format
+        COMPRESSED_RGB565,  ///< 16-bit, 5 bits for red, 6 bits for green, 5 bits for blue. No alpha channel. Compressed with QOI algorithm.
+        COMPRESSED_RGB888,  ///< 24-bit, 8 bits for each of red, green and blue. No alpha channel. Compressed with QOI algorithm.
+        COMPRESSED_ARGB8888 ///< 32-bit, 8 bits for each of red, green, blue and alpha channel. Compressed with QOI algorithm.
     };
 
     /** Algorithms used for L8 images compression can be stored in the following formats. */
@@ -327,8 +331,7 @@ public:
      * Decompress a compressed bitmap into the bitmap cache. The
      * decompressed bitmap will automatically be used by all Widgets.
      *
-     * Only compressed L8 images can be decompressed. The decompressed
-     * bitmap will be L8 with an unchanged palette.
+     * Only compressed L8, RGB565, RGB888 and ARGB8888 bitmaps can be decompressed with this method.
      *
      * When decompressing L8 bitmaps compressed with LZW an array of
      * size 2048 bytes (16 bit aligned) must be supplied. The array is
@@ -339,6 +342,34 @@ public:
      * @return true if the bitmap was decompressed.
      */
     static bool decompress(BitmapId id, uint16_t* buffer = 0);
+
+    /**
+     * Decompress a compressed bitmap into the bitmap cache. The
+     * decompressed bitmap will automatically be used by all Widgets.
+     *
+     * Only compressed L8 bitmaps can be decompressed with this method. The decompressed
+     * bitmap will be L8 with an unchanged palette.
+     *
+     * When decompressing L8 bitmaps compressed with LZW an array of
+     * size 2048 bytes (16 bit aligned) must be supplied. The array is
+     * only used during decompressing.
+     *
+     * @param  id The id of the Bitmap to decompress.
+     * @param  buffer Pointer to a buffer for LZW decompression.
+     * @return true if the bitmap was decompressed.
+     */
+    static bool decompressL8(BitmapId id, uint16_t* buffer = 0);
+
+    /**
+     * Decompress a compressed bitmap into the bitmap cache. The
+     * decompressed bitmap will automatically be used by all Widgets.
+     *
+     * Only compressed RGB565, RGB888 and ARGB8888 bitmaps can be decompressed with this method.
+     *
+     * @param  id The id of the Bitmap to decompress.
+     * @return true if the bitmap was decompressed.
+     */
+    static bool decompressRGB(BitmapId id);
 
     /**
      * Create a dynamic Bitmap. The clutFormat parameter is ignored for bitmaps not in L8 format
@@ -409,8 +440,8 @@ public:
     static BitmapId dynamicBitmapCreateCustom(const uint16_t width, const uint16_t height, uint8_t customSubformat, uint32_t size);
 
     /**
-     * Create a dynamic bitmap without reserving memory in the dynamic
-     * bitmap cache. The pixels must be already available in the
+     * Create a dynamic Bitmap without reserving memory in the dynamic
+     * bitmap cache. The pixels must be already available and 4 byte aligned in the
      * memory, e.g. in flash. No copying is performed.
      *
      * @param width           Width of the bitmap.
@@ -424,6 +455,21 @@ public:
      * @see dynamicBitmapGetAddress, dynamicBitmapCreate, dynamicBitmapSetSolidRect
      */
     static BitmapId dynamicBitmapCreateExternal(const uint16_t width, const uint16_t height, const void* pixels, BitmapFormat format, uint8_t customSubformat = 0);
+
+    /**
+     * Create a dynamic bitmap with L8 without reserving memory in the dynamic
+     * bitmap cache. The pixels must be already available in the external memory and 4 bytes aligned
+     * followed by 2 bytes for the clut format, 2 bytes for the clut size and the color palette itself. No copying is performed.
+     *
+     * @param width           Width of the bitmap.
+     * @param height          Height of the bitmap.
+     * @param pixels          Pointer to the bitmap pixels.
+     *
+     * @return BitmapId of the new bitmap or BITMAP_INVALID if not possible.
+     *
+     * @see dynamicBitmapCreateL8, dynamicBitmapCreateExternal, dynamicBitmapSetSolidRect
+     */
+    static BitmapId dynamicBitmapCreateExternalL8(const uint16_t width, const uint16_t height, const void* pixels);
 
     /**
      * Fill a dynamic Bitmap with a color. If alpha is less than 255, the color will be blended onto
@@ -566,6 +612,10 @@ private:
     static bool isCustomDynamicBitmap(BitmapId id);
     static bool copyBitmapToCache(BitmapId id, uint8_t* const dst);
     static uint32_t firstFreeDynamicBitmapId();
+
+    static void decompressRGB565(uint16_t* dst, BitmapId id);
+    static void decompressRGB888(uint8_t* dst, BitmapId id);
+    static void decompressARGB8888(uint8_t* dst, BitmapId id);
     static uint32_t decompressL8_L4(uint8_t* dst, BitmapId id);
     static uint32_t decompressL8_RLE(uint8_t* dst, BitmapId id);
     static uint32_t decompressL8_LZW9(uint8_t* dst, BitmapId id, uint16_t* buffer = 0);

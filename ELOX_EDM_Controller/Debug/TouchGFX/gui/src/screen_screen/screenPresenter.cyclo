@@ -1,0 +1,23 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:91:5:touchgfx::colortype::colortype(uint32_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:140:5:touchgfx::Rect::Rect(int16_t, int16_t, int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:37:18:virtual void touchgfx::Presenter::activate()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:47:18:virtual void touchgfx::Presenter::deactivate()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:touchgfx::Presenter::~Presenter()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:virtual touchgfx::Presenter::~Presenter()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:58:5:touchgfx::Presenter::Presenter()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:9:5:ModelListener::ModelListener()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:ModelListener::~ModelListener()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:virtual ModelListener::~ModelListener()	1
+../TouchGFX/gui/include/gui/screen_screen/screenPresenter.hpp:28:13:screenPresenter::~screenPresenter()	1
+../TouchGFX/gui/include/gui/screen_screen/screenPresenter.hpp:28:13:virtual screenPresenter::~screenPresenter()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../TouchGFX/gui/src/screen_screen/screenPresenter.cpp:4:1:screenPresenter::screenPresenter(screenView&)	1
+../TouchGFX/gui/src/screen_screen/screenPresenter.cpp:10:6:virtual void screenPresenter::activate()	1
+../TouchGFX/gui/src/screen_screen/screenPresenter.cpp:15:6:virtual void screenPresenter::deactivate()	1
+../TouchGFX/gui/src/screen_screen/screenPresenter.cpp:18:1:void __static_initialization_and_destruction_0()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Keyboard.hpp:74:12:touchgfx::Keyboard::Layout::~Layout()	1
+../TouchGFX/gui/src/screen_screen/screenPresenter.cpp:18:1:void __static_initialization_and_destruction_1()	1
+../TouchGFX/gui/src/screen_screen/screenPresenter.cpp:18:1:cpp)	1
+../TouchGFX/gui/src/screen_screen/screenPresenter.cpp:18:1:cpp)	1
