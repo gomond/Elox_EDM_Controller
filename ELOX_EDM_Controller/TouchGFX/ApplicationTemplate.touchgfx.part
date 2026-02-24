@@ -18,7 +18,7 @@
     "Family": "STM32H7",
     "SubFamily": "STM32H743/753",
     "Platform": "m7",
-    "Toolchain": "STM32CubeIDE",
+    "Toolchain": "CMake",
     "ProjectFile": "../ELOX_EDM_Controller.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [
@@ -26,5 +26,5 @@
     "AdditionalFeatures": [
     ]
   },
-  "Version": "4.23.0"
+  "Version": "4.26.0"
 }

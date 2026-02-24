@@ -21,3 +21,18 @@ The VS Code task **Flash (OpenOCD)** does the same after a build.
 
 ## Debug
 Use the **Debug (OpenOCD)** launch config (Cortex-Debug). It will build, start OpenOCD with ST-Link, and attach to `build/ELOX_EDM_Controller.elf`.
+
+## Post-CubeMX clock sanity check
+After re-generating code from STM32CubeMX, verify these values to keep the display stable:
+
+- In `ELOX_EDM_Controller.ioc`:
+	- `RCC.DIVN3=44`
+	- `RCC.DIVR3=4`
+	- `RCC.DIVR3Freq_Value=22000000`
+	- `RCC.LTDCFreq_Value=22000000`
+	- `RCC.FMCFreq_Value=200000000`
+- In generated code:
+	- `Core/Src/ltdc.c`: `PLL3M=4`, `PLL3N=44`, `PLL3R=4`
+	- `Core/Src/fmc.c`: `FmcClockSelection = RCC_FMCCLKSOURCE_D1HCLK`
+
+If CubeMX changes these, restore them and rebuild.

@@ -1,0 +1,17 @@
+{
+    "cmake.cmakePath": "cube-cmake",
+    "cmake.configureArgs": [
+        "-DCMAKE_COMMAND=cube-cmake"
+    ],
+    "cmake.preferredGenerators": [
+        "Ninja"
+    ],
+    "stm32cube-ide-clangd.path": "cube",
+    "stm32cube-ide-clangd.arguments": [
+        "starm-clangd",
+        "--query-driver=C:/Program Files/arm-gnu-toolchain-14.3.rel1/bin/arm-none-eabi-gcc.exe",
+        "--query-driver=C:/Program Files/arm-gnu-toolchain-14.3.rel1/bin/arm-none-eabi-g++.exe",
+        "--compile-commands-dir=${workspaceFolder}/build"
+    ],
+    "chat.agent.maxRequests": 250
+}

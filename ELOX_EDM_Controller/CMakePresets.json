@@ -9,11 +9,12 @@
     {
       "name": "arm-gcc-debug",
       "displayName": "ARM GCC (Debug)",
-      "generator": "Ninja",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/build",
       "toolchainFile": "${sourceDir}/cmake/toolchain-arm-none-eabi.cmake",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       }
     }
   ],

@@ -1,42 +1,45 @@
 {
-  "version": 4,
-  "configurations": [
-    {
-      "name": "Arm-GCC",
-      "compilerPath": "${env:ARM_GNU_TOOLCHAIN}/arm-none-eabi-gcc.exe",
-      "compileCommands": "${workspaceFolder}/build/compile_commands.json",
-      "intelliSenseMode": "gcc-arm",
-      "cStandard": "gnu11",
-      "cppStandard": "gnu++14",
-      "defines": [
-        "DEBUG",
-        "USE_PWR_LDO_SUPPLY",
-        "USE_HAL_DRIVER",
-        "STM32H743xx",
-        "STM32_THREAD_SAFE_STRATEGY=2"
-      ],
-      "includePath": [
-        "${workspaceFolder}/Core/Inc",
-        "${workspaceFolder}/Core/ThreadSafe",
-        "${workspaceFolder}/Core/User",
-        "${workspaceFolder}/Core/User/Config",
-        "${workspaceFolder}/Core/User/GT911",
-        "${workspaceFolder}/Drivers/STM32H7xx_HAL_Driver/Inc",
-        "${workspaceFolder}/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
-        "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32H7xx/Include",
-        "${workspaceFolder}/Drivers/CMSIS/Include",
-        "${workspaceFolder}/Middlewares/ST/touchgfx/framework/include",
-        "${workspaceFolder}/TouchGFX/App",
-        "${workspaceFolder}/TouchGFX/generated",
-        "${workspaceFolder}/TouchGFX/generated/fonts/include",
-        "${workspaceFolder}/TouchGFX/generated/gui_generated/include",
-        "${workspaceFolder}/TouchGFX/generated/images/include",
-        "${workspaceFolder}/TouchGFX/generated/texts/include",
-        "${workspaceFolder}/TouchGFX/generated/videos/include",
-        "${workspaceFolder}/TouchGFX/gui/include",
-        "${workspaceFolder}/TouchGFX/target",
-        "${workspaceFolder}/TouchGFX/target/generated"
-      ]
-    }
-  ]
+    "configurations": [
+        {
+            "name": "Arm-GCC",
+            "compilerPath": "C:/Program Files/arm-gnu-toolchain-14.3.rel1/bin/arm-none-eabi-gcc.exe",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "intelliSenseMode": "gcc-arm",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "defines": [
+                "DEBUG",
+                "USE_PWR_LDO_SUPPLY",
+                "USE_HAL_DRIVER",
+                "STM32H743xx",
+                "STM32_THREAD_SAFE_STRATEGY=2"
+            ],
+            "includePath": [
+                "${workspaceFolder}/Core/Inc",
+                "${workspaceFolder}/Core/ThreadSafe",
+                "${workspaceFolder}/Core/User",
+                "${workspaceFolder}/Core/User/Config",
+                "${workspaceFolder}/Core/User/GT911",
+                "${workspaceFolder}/Drivers/STM32H7xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32H7xx/Include",
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Middlewares/ST/touchgfx/framework/include",
+                "${workspaceFolder}/TouchGFX/App",
+                "${workspaceFolder}/TouchGFX/generated",
+                "${workspaceFolder}/TouchGFX/generated/fonts/include",
+                "${workspaceFolder}/TouchGFX/generated/gui_generated/include",
+                "${workspaceFolder}/TouchGFX/generated/images/include",
+                "${workspaceFolder}/TouchGFX/generated/texts/include",
+                "${workspaceFolder}/TouchGFX/generated/videos/include",
+                "${workspaceFolder}/TouchGFX/gui/include",
+                "${workspaceFolder}/TouchGFX/target",
+                "${workspaceFolder}/TouchGFX/target/generated",
+                "C:/Program Files/arm-gnu-toolchain-14.3.rel1/lib/gcc/arm-none-eabi/14.3.1/include",
+                "C:/Program Files/arm-gnu-toolchain-14.3.rel1/lib/gcc/arm-none-eabi/14.3.1/include-fixed",
+                "C:/Program Files/arm-gnu-toolchain-14.3.rel1/arm-none-eabi/include"
+            ]
+        }
+    ],
+    "version": 4
 }
