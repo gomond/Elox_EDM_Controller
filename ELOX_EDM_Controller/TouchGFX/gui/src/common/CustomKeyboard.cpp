@@ -18,7 +18,7 @@ CustomKeyboard::CustomKeyboard() : keyboard(),
     layout.callbackAreaArray[2].callback = &modePressed;
     keyboard.setLayout(&layout);
     keyboard.setKeyListener(keyPressed);
-    keyboard.setPosition(0, 0, 320, 240);
+    keyboard.setPosition(0, 0, 560, 240);
     keyboard.setTextIndentation();
     //Allocate the buffer associated with keyboard.
     memset(buffer, 0, sizeof(buffer));
@@ -27,7 +27,7 @@ CustomKeyboard::CustomKeyboard() : keyboard(),
     uppercaseKeys = true;
     firstCharacterEntry = true;
 
-    modeBtnTextArea.setPosition(5, 196, 56, 40);
+    modeBtnTextArea.setPosition(20, 196, 90, 40);
     modeBtnTextArea.setColor(Color::getColorFromRGB(0xFF, 0xFF, 0xFF));
 
     setKeyMappingList();
