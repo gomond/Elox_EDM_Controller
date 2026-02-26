@@ -19,7 +19,8 @@ Screen1ViewBase::Screen1ViewBase() :
 
     relayButton2.setXY(323, 512);
     relayButton2.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
-    relayButton2.setLabelText(touchgfx::TypedText(T___SINGLEUSE_SLIR));
+    // relayButton2 controls ram lock
+    relayButton2.setLabelText(touchgfx::TypedText(T___SINGLEUSE_SLIR)); // Label: Ram Lock
     relayButton2.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     relayButton2.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     relayButton2.setAction(buttonCallback);
@@ -27,7 +28,8 @@ Screen1ViewBase::Screen1ViewBase() :
 
     relayButton4.setXY(323, 825);
     relayButton4.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
-    relayButton4.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6I23));
+    // relayButton4 controls servo active/move
+    relayButton4.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6I23)); // Label: Servo Active / Move
     relayButton4.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     relayButton4.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     relayButton4.setAction(buttonCallback);
@@ -43,7 +45,8 @@ Screen1ViewBase::Screen1ViewBase() :
 
     relayButton1.setXY(34, 512);
     relayButton1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
-    relayButton1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_7DLC));
+    // relayButton1 controls servo direction
+    relayButton1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_7DLC)); // Label: Servo Direction
     relayButton1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     relayButton1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     relayButton1.setAction(buttonCallback);

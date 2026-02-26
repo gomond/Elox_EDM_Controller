@@ -12,9 +12,12 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    // Relay 1 is now used for servo direction
     virtual void toggleRelay1();
+    // Relay 2 is used for ram lock
     virtual void toggleRelay2();
     virtual void toggleRelay3();
+    // Relay 4 is now used for Servo Active or move
     virtual void toggleRelay4();
 protected:
 

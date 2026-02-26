@@ -51,8 +51,6 @@ void screenView::Cut_Interval_Change_Value()
 	keyboard.invalidate();
 	OK.setVisible(true);
 	OK.invalidate();
-	KB_Exit.setVisible(true);
-	KB_Exit.invalidate();
 	textBox_ID = 1;
 
 }
@@ -64,8 +62,6 @@ void screenView::Upper_Ram_Limit_Change_Value()
 	keyboard.invalidate();
 	OK.setVisible(true);
 	OK.invalidate();
-	KB_Exit.setVisible(true);
-	KB_Exit.invalidate();
 	textBox_ID = 2;
 }
 
@@ -76,8 +72,6 @@ void screenView::Retract_Distance_Change_Value()
 	keyboard.invalidate();
 	OK.setVisible(true);
 	OK.invalidate();
-	KB_Exit.setVisible(true);
-	KB_Exit.invalidate();
 	textBox_ID = 3;
 }
 
@@ -88,21 +82,7 @@ void screenView::Finish_Depth_Change_Value()
 	keyboard.invalidate();
 	OK.setVisible(true);
 	OK.invalidate();
-	KB_Exit.setVisible(true);
-	KB_Exit.invalidate();
 	textBox_ID = 4;
-}
-
-
-void screenView::KB_Exit_Pressed()
-{
-	keyboard.setVisible(false);  // Hide keyboard
-	keyboard.invalidate();
-	OK.setVisible(false);
-	OK.invalidate();
-	KB_Exit.setVisible(false);
-	KB_Exit.invalidate();
-	textBox_ID = 0;
 }
 
 void screenView::OK_Pressed()
@@ -111,8 +91,6 @@ void screenView::OK_Pressed()
 	keyboard.invalidate();
 	OK.setVisible(false);
 	OK.invalidate();
-	KB_Exit.setVisible(false);
-	KB_Exit.invalidate();
 
 	switch (textBox_ID) {
 		case 1:
@@ -135,6 +113,7 @@ void screenView::OK_Pressed()
 			break;
 	}
 	keyboard.clearBuffer();
+	textBox_ID = 0;
 }
 
 void screenView::Zero_Z_Encoder_Value()

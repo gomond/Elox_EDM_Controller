@@ -20,7 +20,6 @@ public:
 	virtual void Finish_Depth_Change_Value();
 	//virtual void Update_Z_DRO_Value();
 	virtual void OK_Pressed();
-	virtual void KB_Exit_Pressed();
 	virtual void Zero_Z_Encoder_Value();
 protected:
 

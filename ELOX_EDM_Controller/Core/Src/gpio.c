@@ -23,6 +23,8 @@
 
 /* USER CODE BEGIN 0 */
 
+#define RELAY_DEFAULT_OFF_LEVEL GPIO_PIN_SET
+
 /* USER CODE END 0 */
 
 /*----------------------------------------------------------------------------*/
@@ -67,7 +69,8 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOF, SCL_Pin|SDA_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, Relay1_Pin|Relay2_Pin|Relay3_Pin|Relay4_Pin, GPIO_PIN_RESET);
+  // Set servo direction relay (Relay1) and other relays to default off level
+  HAL_GPIO_WritePin(GPIOA, Relay1_Pin|Relay2_Pin|Relay3_Pin|Relay4_Pin, RELAY_DEFAULT_OFF_LEVEL);
 
   /*Configure GPIO pin : DISP_Pin */
   GPIO_InitStruct.Pin = DISP_Pin;
@@ -90,8 +93,8 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : Relay1_Pin Relay2_Pin Relay3_Pin Relay4_Pin */
-  GPIO_InitStruct.Pin = Relay1_Pin|Relay2_Pin|Relay3_Pin|Relay4_Pin;
+  /*Configure GPIO pins : Relay1_Pin (servo direction), Relay2_Pin Relay3_Pin Relay4_Pin (Servo Active/move) */
+  GPIO_InitStruct.Pin = Relay1_Pin|Relay2_Pin|Relay3_Pin|Relay4_Pin; // Relay1_Pin is servo direction, Relay4_Pin is Servo Active/move
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

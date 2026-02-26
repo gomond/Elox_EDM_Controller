@@ -3,6 +3,7 @@
 
 #include <touchgfx/widgets/Keyboard.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 #include <fonts/ApplicationFontProvider.hpp>
 #include "BitmapDatabase.hpp"
 

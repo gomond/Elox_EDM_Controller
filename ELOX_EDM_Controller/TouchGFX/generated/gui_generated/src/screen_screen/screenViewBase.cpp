@@ -84,26 +84,15 @@ screenViewBase::screenViewBase() :
     textArea10.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CT41));
     add(textArea10);
 
-    KB_Exit.setBoxWithBorderPosition(0, 0, 100, 100);
-    KB_Exit.setBorderSize(5);
-    KB_Exit.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(150, 169, 178), touchgfx::Color::getColorFromRGB(44, 72, 82), touchgfx::Color::getColorFromRGB(132, 154, 176), touchgfx::Color::getColorFromRGB(57, 78, 99));
-    KB_Exit.setText(TypedText(T___SINGLEUSE_FUIN));
-    KB_Exit.setTextPosition(0, 0, 100, 100);
-    KB_Exit.setTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(10, 10, 10));
-    KB_Exit.setVisible(false);
-    KB_Exit.setAction(flexButtonCallback);
-    KB_Exit.setPosition(8, 802, 100, 100);
-    add(KB_Exit);
-
-    OK.setBoxWithBorderPosition(0, 0, 100, 100);
+    OK.setBoxWithBorderPosition(0, 0, 51, 59);
     OK.setBorderSize(5);
     OK.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(176, 196, 207), touchgfx::Color::getColorFromRGB(30, 42, 46), touchgfx::Color::getColorFromRGB(77, 123, 168), touchgfx::Color::getColorFromRGB(19, 44, 69));
     OK.setText(TypedText(T___SINGLEUSE_XB1A));
-    OK.setTextPosition(0, 25, 100, 100);
+    OK.setTextPosition(0, 25, 51, 59);
     OK.setTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(10, 10, 10));
     OK.setVisible(false);
     OK.setAction(flexButtonCallback);
-    OK.setPosition(492, 802, 100, 100);
+    OK.setPosition(543, 707, 51, 59);
     add(OK);
 
     Toggle_IM.setXY(399, 896);
@@ -260,13 +249,6 @@ void screenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCon
         //When OK clicked call virtual function
         //Call OK_Pressed
         OK_Pressed();
-    }
-    if (&src == &KB_Exit)
-    {
-        //Interaction6
-        //When KB_Exit clicked call virtual function
-        //Call KB_Exit_Pressed
-        KB_Exit_Pressed();
     }
 }
 

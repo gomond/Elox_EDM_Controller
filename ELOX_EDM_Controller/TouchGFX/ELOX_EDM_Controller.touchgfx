@@ -147,67 +147,11 @@
           },
           {
             "Type": "FlexButton",
-            "Name": "KB_Exit",
-            "X": 8,
-            "Y": 802,
-            "Width": 100,
-            "Height": 100,
-            "Visible": false,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "TextId": "__SingleUse_FUIN",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
-                },
-                "ColorPressed": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
-                }
-              },
-              {
-                "Type": "BoxWithBorderButtonStyle",
-                "Width": 100,
-                "Height": 100,
-                "LockToFlexButtonSize": true,
-                "BorderSize": 5,
-                "ColorReleased": {
-                  "Red": 150,
-                  "Green": 169,
-                  "Blue": 178
-                },
-                "ColorPressed": {
-                  "Red": 44,
-                  "Green": 72,
-                  "Blue": 82
-                },
-                "ColorBorderReleased": {
-                  "Red": 132,
-                  "Green": 154,
-                  "Blue": 176
-                },
-                "ColorBorderPressed": {
-                  "Red": 57,
-                  "Green": 78,
-                  "Blue": 99
-                }
-              }
-            ]
-          },
-          {
-            "Type": "FlexButton",
             "Name": "OK",
-            "X": 492,
-            "Y": 802,
-            "Width": 100,
-            "Height": 100,
+            "X": 543,
+            "Y": 707,
+            "Width": 51,
+            "Height": 59,
             "Visible": false,
             "ButtonTrigger": {
               "Type": "ClickButtonTrigger"
@@ -231,8 +175,8 @@
               },
               {
                 "Type": "BoxWithBorderButtonStyle",
-                "Width": 100,
-                "Height": 100,
+                "Width": 51,
+                "Height": 59,
                 "LockToFlexButtonSize": true,
                 "BorderSize": 5,
                 "ColorReleased": {
@@ -641,17 +585,6 @@
             }
           },
           {
-            "InteractionName": "Interaction6",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "KB_Exit"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "KB_Exit_Pressed"
-            }
-          },
-          {
             "InteractionName": "Interaction7",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -914,7 +847,7 @@
     "DisplayOrientation": "Portrait",
     "Family": "STM32H7",
     "SubFamily": "STM32H743/753",
-    "Toolchain": "STM32CubeIDE",
+    "Toolchain": "CMake",
     "Platform": "m7",
     "ProjectFile": "../ELOX_EDM_Controller.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",

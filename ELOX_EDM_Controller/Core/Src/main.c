@@ -1,3 +1,4 @@
+// ...existing code...
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -18,6 +19,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include "../User/FT5X06/ft5x06.h"
 #include "main.h"
 #include "crc.h"
 #include "dma2d.h"
@@ -33,7 +35,14 @@
 #include <stdio.h>
 #include "BSP_SDRAM.h"
 #include "BSP_RGB_LCD.h"
-#include "GT911.h"
+
+#if defined(DISPLAY_TFT10)
+volatile FT5X06_Dev *diagnostic_ptr = &FT5X06_Dev_Now;
+#endif
+#if defined(DISPLAY_TFT7)
+#include "../User/GT911/GT911.h"
+#endif
+#include "../User/FT5X06/ft5x06.h"
 
 
 /* USER CODE END Includes */
@@ -69,7 +78,11 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+
+#if defined(DISPLAY_TFT7)
 extern volatile GT911_Dev Dev_Now;
+#endif
 
 /* USER CODE END 0 */
 
@@ -211,11 +224,21 @@ void SystemClock_Config(void)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	// the code is in STM32TouchController.cpp
+  // the code is in STM32TouchController.cpp
 
-	if((GPIO_Pin == GPIO_PIN_7)&&(Dev_Now.Touch == 0)){
-		Dev_Now.Touch = 1;
-	}
+
+
+// FT5X06 support
+#if defined(DISPLAY_TFT10)
+#include "../User/FT5X06/ft5x06.h"
+  if((GPIO_Pin == GPIO_PIN_8) && (FT5X06_Dev_Now.Touch == 0)){
+    FT5X06_Dev_Now.Touch = 1;
+  }
+#elif defined(DISPLAY_TFT7)
+  if((GPIO_Pin == GPIO_PIN_7) && (Dev_Now.Touch == 0)){
+    Dev_Now.Touch = 1;
+  }
+#endif
 
 }
 

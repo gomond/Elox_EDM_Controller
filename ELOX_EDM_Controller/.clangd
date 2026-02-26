@@ -2,6 +2,29 @@ CompileFlags:
   Add:
     - '-ferror-limit=0'
     - '-Wno-implicit-int'
+    - '--target=arm-none-eabi'
+    - '-isystem'
+    - C:/Program Files/arm-gnu-toolchain-14.3.rel1/arm-none-eabi/include
+    - '-isystem'
+    - >-
+      C:/Program
+      Files/arm-gnu-toolchain-14.3.rel1/lib/gcc/arm-none-eabi/14.3.1/include
+    - '-isystem'
+    - >-
+      C:/Program
+      Files/arm-gnu-toolchain-14.3.rel1/lib/gcc/arm-none-eabi/14.3.1/include-fixed
+    - '-isystem'
+    - >-
+      C:/Program
+      Files/arm-gnu-toolchain-14.3.rel1/arm-none-eabi/include/c++/14.3.1
+    - '-isystem'
+    - >-
+      C:/Program
+      Files/arm-gnu-toolchain-14.3.rel1/arm-none-eabi/include/c++/14.3.1/arm-none-eabi
+    - '-isystem'
+    - >-
+      C:/Program
+      Files/arm-gnu-toolchain-14.3.rel1/arm-none-eabi/include/c++/14.3.1/backward
   CompilationDatabase: build
 Diagnostics:
   Suppress:

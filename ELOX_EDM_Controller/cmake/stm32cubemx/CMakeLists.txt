@@ -30,7 +30,8 @@ set(MX_Application_Src
     ${CMAKE_CURRENT_SOURCE_DIR}/../../TouchGFX/target/generated/STM32DMA.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../../TouchGFX/target/generated/OSWrappers.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../../TouchGFX/target/TouchGFXHAL.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../TouchGFX/target/STM32TouchController.cpp
+    $<$<BOOL:${DISPLAY_TFT7}>:${CMAKE_CURRENT_SOURCE_DIR}/../../TouchGFX/target/STM32TouchController.cpp>
+	$<$<BOOL:${DISPLAY_TFT10}>:${CMAKE_CURRENT_SOURCE_DIR}/../../Core/User/FT5X06/ft5x06.c>
     ${CMAKE_CURRENT_SOURCE_DIR}/../../TouchGFX/target/TouchGFXGPIO.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/main.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/gpio.c

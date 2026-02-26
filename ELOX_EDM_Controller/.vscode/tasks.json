@@ -1,63 +1,146 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "CMake: configure",
-      "type": "shell",
-      "command": "cmake",
-      "args": ["--preset", "arm-gcc-debug"],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "Build",
-      "type": "shell",
-      "command": "cmake",
-      "args": ["--build", "${workspaceFolder}/build"],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "dependsOn": "CMake: configure",
-      "group": "build",
-      "problemMatcher": []
-    },
-    {
-      "label": "Clean",
-      "type": "shell",
-      "command": "cmake",
-      "args": ["--build", "${workspaceFolder}/build", "--target", "clean"],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "Flash (OpenOCD)",
-      "type": "shell",
-      "dependsOn": "Build",
-      "command": "C:/Users/gomond/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
-      "args": [
-        "-s", "C:/Users/gomond/.pico-sdk/openocd/0.12.0+dev/scripts",
-        "-f", "interface/stlink.cfg",
-        "-f", "target/stm32h7x.cfg",
-        "-c", "program build/ELOX_EDM_Controller verify reset exit"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "Flash (STM32CubeProgrammer CLI)",
-      "type": "shell",
-      "dependsOn": "Build",
-      "command": "C:/Program Files/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI.exe",
-      "args": [
-        "-c", "port=SWD",
-        "-w", "${workspaceFolder}/build/ELOX_EDM_Controller.bin", "0x08000000",
-        "-v",
-        "-rst"
-      ],
-      "problemMatcher": []
-    }
-  ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "CMake: configure",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--preset",
+				"arm-gcc-debug"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Build TFT7 (GT911)",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"${workspaceFolder}/build"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"dependsOn": "CMake: configure",
+			"group": "build",
+			"problemMatcher": [],
+			"detail": "Build for TFT7 display with GT911 touch",
+			"env": {
+				"DISPLAY_TYPE": "TFT7"
+			}
+		},
+		{
+			"label": "Build TFT10 (FT5x06)",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"${workspaceFolder}/build"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"dependsOn": "CMake: configure",
+			"group": "build",
+			"problemMatcher": [],
+			"detail": "Build for TFT10 display with FT5x06 touch",
+			"env": {
+				"DISPLAY_TYPE": "TFT10"
+			}
+		},
+		{
+			"label": "Build",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"${workspaceFolder}/build"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"dependsOn": "CMake: configure",
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "Clean",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"${workspaceFolder}/build",
+				"--target",
+				"clean"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Flash (OpenOCD)",
+			"type": "shell",
+			"dependsOn": "Build",
+			"command": "C:/Users/gomond/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
+			"args": [
+				"-s",
+				"C:/Users/gomond/.pico-sdk/openocd/0.12.0+dev/scripts",
+				"-f",
+				"interface/stlink.cfg",
+				"-f",
+				"target/stm32h7x.cfg",
+				"-c",
+				"program build/ELOX_EDM_Controller verify reset exit"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Flash (STM32CubeProgrammer CLI)",
+			"type": "shell",
+			"dependsOn": "Build",
+			"command": "C:/Program Files/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI.exe",
+			"args": [
+				"-c",
+				"port=SWD",
+				"-w",
+				"${workspaceFolder}/build/ELOX_EDM_Controller.bin",
+				"0x08000000",
+				"-v",
+				"-rst"
+			],
+			"problemMatcher": []
+		},
+		{
+			"type": "cmake",
+			"label": "CMake: clean rebuild",
+			"command": "cleanRebuild",
+			"targets": [
+				"all"
+			],
+			"preset": "arm-gcc-debug",
+			"group": "build",
+			"problemMatcher": [],
+			"detail": "CMake template clean rebuild task"
+		},
+		{
+			"label": "Build and Monitor",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"build",
+				"--verbose"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
 }

@@ -1,11 +1,14 @@
 # Servo Relay Test Matrix (ELOX 8-2012-DR)
 
-Use this sheet to identify the remaining relay functions with **Relay 4 (green) held active**.
+## ASTRA Unit Signals
+- Pink wire: 24VDC output from ASTRA unit, indicates cycle start has been pressed
+
+Use this sheet to identify the remaining relay functions with **Relay 4 (green, Servo Active/move) held active**.
 
 ## Known Mapping
-- Relay 4 = Green = **Servo Enable** (confirmed)
-- Relay 1 = Red = Unknown
-- Relay 2 = Orange = Unknown
+- Relay 4 = Green = **Servo Active / Move** (confirmed)
+- Relay 1 = Red = Servo Direction
+- Relay 2 = Orange = Ram Lock (causes ram to jolt when active/released)
 - Relay 3 = Yellow = Unknown
 
 ## Test Setup

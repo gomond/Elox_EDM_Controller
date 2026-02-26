@@ -2,6 +2,28 @@ cmake_minimum_required(VERSION 3.21)
 
 project(ELOX_EDM_Controller LANGUAGES C CXX ASM)
 
+# Display selection option
+option(DISPLAY_TYPE "Select display type: RGB, TFT7, or TFT10" "")
+
+# Fallback to TFT7 if not specified
+if(NOT DISPLAY_TYPE OR DISPLAY_TYPE STREQUAL "")
+	set(DISPLAY_TYPE "TFT7")
+endif()
+
+
+if(DISPLAY_TYPE STREQUAL "RGB")
+	set(DISPLAY_DEFINE "DISPLAY_RGB")
+elseif(DISPLAY_TYPE STREQUAL "TFT7")
+	set(DISPLAY_DEFINE "DISPLAY_TFT7")
+elseif(DISPLAY_TYPE STREQUAL "TFT10")
+	set(DISPLAY_DEFINE "DISPLAY_TFT10")
+else()
+	message(FATAL_ERROR "Unknown DISPLAY_TYPE: ${DISPLAY_TYPE}. Use RGB, TFT7, or TFT10.")
+endif()
+
+# Ensure the define is set globally for all sources (including TouchGFX)
+add_definitions(-D${DISPLAY_DEFINE})
+
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS ON)
@@ -49,26 +71,22 @@ add_link_options(
 	-Wl,--print-memory-usage
 )
 
+
 add_executable(${CMAKE_PROJECT_NAME})
+
+# Set display type define for all sources after target is created
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE ${DISPLAY_DEFINE})
 
 add_subdirectory(cmake/stm32cubemx)
 
-file(GLOB_RECURSE TOUCHGFX_APP_SOURCES CONFIGURE_DEPENDS
-	${CMAKE_SOURCE_DIR}/TouchGFX/generated/fonts/src/*.cpp
-	${CMAKE_SOURCE_DIR}/TouchGFX/generated/gui_generated/src/*.cpp
-	${CMAKE_SOURCE_DIR}/TouchGFX/generated/images/src/*.cpp
-	${CMAKE_SOURCE_DIR}/TouchGFX/generated/texts/src/*.cpp
-	${CMAKE_SOURCE_DIR}/TouchGFX/gui/src/*.cpp
-)
-
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-	${TOUCHGFX_APP_SOURCES}
-)
+# Add touchgfx generated sources and libraries
+add_subdirectory(cmake/touchgfx)
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 	Core/User
 	Core/User/Config
-	Core/User/GT911
+	$<$<BOOL:${DISPLAY_TFT7}>:Core/User/GT911>
+	$<$<BOOL:${DISPLAY_TFT10}>:Core/Inc>
 	Middlewares/ST/touchgfx/framework/include
 	TouchGFX/generated/fonts/include
 	TouchGFX/generated/gui_generated/include
@@ -83,12 +101,14 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 	Core/Src/BSP_RGB_LCD.c
 	Core/Src/BSP_SDRAM.c
 	Core/User/Config/DEV_Config.c
-	Core/User/GT911/Analog_I2C.c
-	Core/User/GT911/GT911.c
+	$<$<BOOL:${DISPLAY_TFT7}>:Core/User/GT911/Analog_I2C.c>
+	$<$<BOOL:${DISPLAY_TFT7}>:Core/User/GT911/GT911.c>
+	$<$<BOOL:${DISPLAY_TFT10}>:Core/User/FT5X06/ft5x06.c>
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 	Core/ThreadSafe
+	$<$<BOOL:${DISPLAY_TFT10}>:Core/Inc>
 )
 
 target_link_libraries(${CMAKE_PROJECT_NAME}

@@ -114,10 +114,10 @@ Pin Nb	PINs	FUNCTIONs	LABELs
 44	PH3	LTDC_R1	
 46	PH5	FMC_SDNWE	
 47	PA3	TIM2_CH4	
-50	PA4	GPIO_Output	Relay1
-51	PA5	GPIO_Output	Relay2
+50	PA4	GPIO_Output	Relay1 (Servo Direction)
+51	PA5	GPIO_Output	Relay2 (Ram Lock)
 52	PA6	GPIO_Output	Relay3
-53	PA7	GPIO_Output	Relay4
+53	PA7	GPIO_Output	Relay4 (Servo Active / Move)
 57	PB1	LTDC_R6	
 59	PF11	FMC_SDNRAS	
 60	PF12	FMC_A6	

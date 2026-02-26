@@ -2,9 +2,9 @@
     "configurations": [
         {
             "name": "Arm-GCC",
-            "compilerPath": "C:/Program Files/arm-gnu-toolchain-14.3.rel1/bin/arm-none-eabi-gcc.exe",
+            "compilerPath": "C:/Program Files/arm-gnu-toolchain-14.3.rel1/bin/arm-none-eabi-g++.exe",
             "compileCommands": "${workspaceFolder}/build/compile_commands.json",
-            "intelliSenseMode": "gcc-arm",
+            "intelliSenseMode": "windows-gcc-arm",
             "cStandard": "gnu11",
             "cppStandard": "gnu++14",
             "defines": [
@@ -35,6 +35,9 @@
                 "${workspaceFolder}/TouchGFX/gui/include",
                 "${workspaceFolder}/TouchGFX/target",
                 "${workspaceFolder}/TouchGFX/target/generated",
+                "C:/Program Files/arm-gnu-toolchain-14.3.rel1/arm-none-eabi/include/c++/14.3.1",
+                "C:/Program Files/arm-gnu-toolchain-14.3.rel1/arm-none-eabi/include/c++/14.3.1/arm-none-eabi",
+                "C:/Program Files/arm-gnu-toolchain-14.3.rel1/arm-none-eabi/include/c++/14.3.1/backward",
                 "C:/Program Files/arm-gnu-toolchain-14.3.rel1/lib/gcc/arm-none-eabi/14.3.1/include",
                 "C:/Program Files/arm-gnu-toolchain-14.3.rel1/lib/gcc/arm-none-eabi/14.3.1/include-fixed",
                 "C:/Program Files/arm-gnu-toolchain-14.3.rel1/arm-none-eabi/include"

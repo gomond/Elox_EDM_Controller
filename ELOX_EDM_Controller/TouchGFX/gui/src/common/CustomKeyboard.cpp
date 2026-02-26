@@ -27,7 +27,7 @@ CustomKeyboard::CustomKeyboard() : keyboard(),
     uppercaseKeys = true;
     firstCharacterEntry = true;
 
-    modeBtnTextArea.setPosition(20, 196, 90, 40);
+    modeBtnTextArea.setPosition(5, 193, 56, 40);
     modeBtnTextArea.setColor(Color::getColorFromRGB(0xFF, 0xFF, 0xFF));
 
     setKeyMappingList();

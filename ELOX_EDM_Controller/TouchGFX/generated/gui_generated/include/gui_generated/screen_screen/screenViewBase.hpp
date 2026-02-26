@@ -46,10 +46,6 @@ public:
     {
         // Override and implement this function in screen
     }
-    virtual void KB_Exit_Pressed()
-    {
-        // Override and implement this function in screen
-    }
     virtual void Zero_Z_Encoder_Value()
     {
         // Override and implement this function in screen
@@ -76,7 +72,6 @@ protected:
     touchgfx::TextArea textArea8;
     touchgfx::TextArea textArea9;
     touchgfx::TextArea textArea10;
-    touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  KB_Exit;
     touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  OK;
     touchgfx::ToggleButton Toggle_IM;
     touchgfx::ToggleButton Toggle_Man_Auto;

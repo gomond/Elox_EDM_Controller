@@ -29,7 +29,7 @@
         <Translation Language="GB">Relay3</Translation>
       </Text>
       <Text Id="__SingleUse_6I23" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">Relay4</Translation>
+        <Translation Language="GB">Servo Off</Translation>
       </Text>
       <Text Id="__SingleUse_SLIR" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">Relay2</Translation>
@@ -51,9 +51,6 @@
       </Text>
       <Text Id="__SingleUse_H54P" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">000.0000</Translation>
-      </Text>
-      <Text Id="__SingleUse_FUIN" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">KB&#10;Exit</Translation>
       </Text>
       <Text Id="__SingleUse_XB1A" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">OK</Translation>
